@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -840,3 +840,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a10a2450e27cfb47ba7b0c4cf205a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &4608627800018057929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 38.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126283432385331591, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604743780966109732, guid: c103f78cfcbaef64f95432fba872261f, type: 3}
+      propertyPath: m_Name
+      value: Jonathan's Tree
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c103f78cfcbaef64f95432fba872261f, type: 3}

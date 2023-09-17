@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 868126499}
   - component: {fileID: 868126498}
   m_Layer: 0
-  m_Name: hyojoonn's cool cube
+  m_Name: hyojoon's cool cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1944055296
 MonoBehaviour:

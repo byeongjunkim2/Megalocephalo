@@ -22,13 +22,32 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{9FF6708B-7C02-4A18-7849-0D26FDF3C770}">
+		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{DFFCE232-F226-7179-A86A-24A1A5677EF1}">
 			<ShortName>TestSoundbank</ShortName>
 			<Path>TestSoundbank.bnk</Path>
+			<Media>
+				<File Id="66690859" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Test_Boing.wav</ShortName>
+					<CachePath>SFX/Test_Boing_10C4C929.wem</CachePath>
+				</File>
+				<File Id="562467638" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MusicDemo.wav</ShortName>
+					<CachePath>SFX/MusicDemo_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="1097980931" Name="TestEvent" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1324413170" Name="TestMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="562467638"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1650626098" Name="TestSFX" DurationType="OneShot" DurationMin="0.663" DurationMax="0.663">
+					<MediaRefs>
+						<MediaRef Id="66690859"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8DB5603F-6E2D-80F7-EE6B-2FDFC4D18553}</FileHash>
+	<FileHash>{13F2A582-138A-07ED-7282-44CA936BD29B}</FileHash>
 </SoundBanksInfo>

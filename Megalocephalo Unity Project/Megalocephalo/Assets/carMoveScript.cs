@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 
 public class carMoveScript : MonoBehaviour
@@ -26,7 +27,7 @@ public class carMoveScript : MonoBehaviour
     public KeyCode leftMoveKey1 = KeyCode.LeftArrow;
     public KeyCode leftMoveKey2 = KeyCode.A;
     public KeyCode jumpKey = KeyCode.Space;
-    public KeyCode shootKey = KeyCode.A;
+    public KeyCode shootKey = KeyCode.F;
 
     private void Start()
     {   
@@ -66,7 +67,7 @@ public class carMoveScript : MonoBehaviour
 
         // shoot?
         if ((Input.GetKey(shootKey))){
-
+            
         }
 
         // move forward and backward...
@@ -79,9 +80,19 @@ public class carMoveScript : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -moveSpeed);
         }
 
+        // todo more modify (for case: right move and release left key...)
+        if ((Input.GetKeyUp(rightMoveKey1) || (Input.GetKeyUp(rightMoveKey2))))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+        }
+        else if ((Input.GetKeyUp(leftMoveKey1) || (Input.GetKeyUp(leftMoveKey2))))
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+        }
+
         //Debug.Log("Car speed:" + rb.velocity);
 
-        // jump
+            // jump
         if (Input.GetKeyDown(jumpKey) && IsGrounded)
         {
             //Debug.Log("Car is start to jumping!!");

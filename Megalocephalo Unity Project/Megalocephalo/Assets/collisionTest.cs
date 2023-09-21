@@ -6,11 +6,11 @@ public class collisionTest : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Sunghwan")
+        if (other.gameObject.tag == "Car")
         {
             if (isCollided == false)
             {
-                Debug.Log(count++);
+                Debug.Log("Bullet collided: " + count++);
             }
             isCollided = true;
         }
@@ -18,7 +18,7 @@ public class collisionTest : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Sunghwan")
+        if (other.gameObject.tag == "Car")
         {
             isCollided = false;
         }

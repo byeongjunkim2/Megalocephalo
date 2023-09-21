@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class collisionTest : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag == "Sunghwan")
+        if (other.gameObject.tag == "Sunghwan")
         {
-            Debug.Log(count++);
+            if (isCollided == false)
+            {
+                Debug.Log(count++);
+            }
+            isCollided = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Sunghwan")
+        {
+            isCollided = false;
         }
     }
 
@@ -17,6 +29,7 @@ public class collisionTest : MonoBehaviour
     Vector3 movement;
     bool isDirectionLeft = false;
     int count = 0;
+    bool isCollided = false;
 
 
     private void Start()

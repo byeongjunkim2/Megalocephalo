@@ -3,13 +3,25 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="TestEvent" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}">
+				<Event Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}">
 					<ChildrenList>
 						<Action Name="" ID="{94665A84-FCBF-4CCB-B965-5B4D43A124C4}" ShortID="966940464">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
-							</PropertyList>
-							<ReferenceList/>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Test_Boing" ID="{A2D64E78-43C9-433C-88E8-F7658B33F2B6}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="TestMusic" ID="{D0356265-CB21-40C4-83D4-12360C256285}">
+					<ChildrenList>
+						<Action Name="" ID="{E65B4916-01FD-4A30-805C-DF5EA1CD970C}" ShortID="591110846">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Test" ID="{6DE4F023-3019-42C9-95C2-6EF89DF68207}" WorkUnitID="{7445F53B-E22C-476E-93F3-C2380D00625E}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>

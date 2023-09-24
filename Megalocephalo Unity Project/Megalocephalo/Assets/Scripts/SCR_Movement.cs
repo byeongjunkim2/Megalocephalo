@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     //private float gravity = -9.81f;
     public float moveSpeed = 5.0f;
     public float jumpForce = 3.0f;
-    public float maxJumpForce = 5.0f;
+   // public float maxJumpForce = 5.0f;
     public float gravity = -9.81f;
     public float slideForce = 5f;
 
@@ -77,9 +77,17 @@ public class Movement : MonoBehaviour
         if(characterController.isGrounded == true)
         {
             moveDirection.y = jumpForce;
+           // isJumping = true;
         }
     }
-
+    public void JumpStop()
+    {
+        if (characterController.isGrounded == false /*&& isJumping*/ && moveDirection.y > 0)
+        {
+            moveDirection.y = 0;
+           // isJumping = false;
+        }
+    }
 
 
 

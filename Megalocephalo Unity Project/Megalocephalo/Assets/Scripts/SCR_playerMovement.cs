@@ -26,13 +26,14 @@ public class SCR_playerMovement : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         
 
+        //movement by character controller
         movement.MoveTo(new Vector3(x, 0, 0));
-    
         if (Input.GetKeyDown(jumpKeyCode))
         {
             movement.JumpTo();
-          //  transform.LookAt(transform.position + new Vector3(x, 0, 0));
         }
+
+
         if (Input.GetKeyDown(attackKeyCode))
         {
             GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation );
@@ -41,6 +42,11 @@ public class SCR_playerMovement : MonoBehaviour
             bulletRigid.velocity = transform.right * 80;
             // transform.right
         }
+
+        //movement by transform
+
+        //moveVec = new Vector3(hAxis, 0, vAxis).normalized;
+        //transform.position += moveVec * speed * Time.deltaTime;
 
 
     }

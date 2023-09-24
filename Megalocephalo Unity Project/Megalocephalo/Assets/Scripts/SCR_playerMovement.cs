@@ -37,13 +37,14 @@ public class SCR_playerMovement : MonoBehaviour
             movement.JumpStop();
         }
 
+        transform.LookAt(transform.position + new Vector3(x, 0, 0));
 
         if (Input.GetKeyDown(attackKeyCode))
         {
             GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation );
             Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
-           // bulletRigid.velocity = transform.forward * 80;
-            bulletRigid.velocity = transform.right * 80;
+            bulletRigid.velocity = transform.forward * 80;
+           // bulletRigid.velocity = transform.right * 80;
             // transform.right
         }
 

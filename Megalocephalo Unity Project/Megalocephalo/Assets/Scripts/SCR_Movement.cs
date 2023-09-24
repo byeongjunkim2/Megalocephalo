@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK.Wwise;
 
 public class Movement : MonoBehaviour
 {
@@ -77,7 +78,8 @@ public class Movement : MonoBehaviour
         if(characterController.isGrounded == true)
         {
             moveDirection.y = jumpForce;
-           // isJumping = true;
+            AkSoundEngine.PostEvent("TestSFX", gameObject);
+            // isJumping = true;
         }
     }
     public void JumpStop()

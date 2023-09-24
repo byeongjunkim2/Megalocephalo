@@ -21,7 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void PlayAudioZoo()
     {
-        SceneManager.LoadScene("Audio_Zoo");
+        SceneManager.LoadScene("AudioZoo");
     }
 
     public void Quit()

@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class SCR_playerMovement : MonoBehaviour
 {
+    private KeyCode rightMoveKeyCode = KeyCode.RightArrow;
+    private KeyCode lefttMoveKeyCode = KeyCode.LeftArrow;
 
     private KeyCode jumpKeyCode = KeyCode.Space;
     private KeyCode attackKeyCode = KeyCode.X;
@@ -23,11 +25,31 @@ public class SCR_playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        //Debug.Log(x);
+        float x = 0; //= Input.GetAxisRaw("Horizontal");
+        if (Input.GetKey(rightMoveKeyCode))
+        {
+            x = 1;
+            if (new Vector3(-x, 0, 0) == transform.forward || new Vector3(0, 0, -x) == transform.forward)
+            {
+                transform.LookAt(transform.position - transform.forward);
+            }
+        }
+        else if (Input.GetKey(lefttMoveKeyCode))
+        {
+            x = -1;
+            if (new Vector3(-x, 0, 0) == transform.forward || new Vector3(0, 0, -x) == transform.forward)
+            {
+                transform.LookAt(transform.position - transform.forward);
+            }
+        }
+        else
+        {
+            x = 0;
+        }
 
         //movement by character controller
-        movement.MoveTo(new Vector3(x, 0, 0));
+        // movement.MoveTo(new Vector3(x, 0, 0));
+        movement.MoveForward(x);
         if (Input.GetKeyDown(jumpKeyCode))
         {
             movement.JumpTo();
@@ -37,7 +59,7 @@ public class SCR_playerMovement : MonoBehaviour
             movement.JumpStop();
         }
 
-        transform.LookAt(transform.position + new Vector3(x, 0, 0));
+        // transform.LookAt(transform.position + new Vector3(x, 0, 0));
 
         if (Input.GetKeyDown(attackKeyCode))
         {

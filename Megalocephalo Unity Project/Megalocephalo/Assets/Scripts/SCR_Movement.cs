@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AK.Wwise;
+using System;
 
 public class Movement : MonoBehaviour
 {
@@ -72,7 +73,12 @@ public class Movement : MonoBehaviour
         moveDirection = new Vector3(direction.x, moveDirection.y,direction.z);
 
     }
+    public void MoveForward(float movement)
+    {
 
+        moveDirection = new Vector3(0, moveDirection.y, 0) + gameObject.transform.forward * Math.Abs(movement);
+
+    }
     public void JumpTo()
     {
         if(characterController.isGrounded == true)

@@ -24,7 +24,7 @@ public class SCR_playerMovement : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
-        Debug.Log(x);
+        //Debug.Log(x);
 
         //movement by character controller
         movement.MoveTo(new Vector3(x, 0, 0));

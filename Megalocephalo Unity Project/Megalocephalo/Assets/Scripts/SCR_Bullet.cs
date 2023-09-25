@@ -12,5 +12,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }

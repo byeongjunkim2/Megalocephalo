@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Mainmenu/Mainmenu.unity
     guid: 1ab0c2b277ee71145b8c6205a5335b1d
   - enabled: 1
-    path: Assets/Scenes/Prototype.unity
+    path: Assets/Scenes/Prototype/Prototype.unity
     guid: 0b4737a0ad7cf644083362be81dd62dc
   - enabled: 1
     path: Assets/Scenes/AudioZoo/PrototypeAudioZoo.unity

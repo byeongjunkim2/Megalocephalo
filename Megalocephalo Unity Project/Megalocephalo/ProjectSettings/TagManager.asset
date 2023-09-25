@@ -8,6 +8,8 @@ TagManager:
   - Car
   - Bullet
   - Enemy
+  - Border
+  - Trigger
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,20 +16,31 @@ public class SCR_playerMovement : MonoBehaviour
 
     public GameObject bullet;
 
+    // rotation stuff
+    private float currentRotation;
+    private float targetRotation;
+    public float angleOffset = 45.0f;
+
     // Start is called before the first frame update
     private void Awake()
     {
         movement = GetComponent<Movement>();
         attack = GetComponent<Attack>();
+
+        targetRotation = angleOffset;
+        currentRotation = targetRotation;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         float x = 0; //= Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(rightMoveKeyCode))
         {
             x = 1;
+            targetRotation = angleOffset * x;
             if (new Vector3(-x, 0, 0) == transform.forward || new Vector3(0, 0, -x) == transform.forward)
             {
                 transform.LookAt(transform.position - transform.forward);
@@ -37,6 +49,7 @@ public class SCR_playerMovement : MonoBehaviour
         else if (Input.GetKey(lefttMoveKeyCode))
         {
             x = -1;
+            targetRotation = angleOffset * x;
             if (new Vector3(-x, 0, 0) == transform.forward || new Vector3(0, 0, -x) == transform.forward)
             {
                 transform.LookAt(transform.position - transform.forward);
@@ -46,6 +59,10 @@ public class SCR_playerMovement : MonoBehaviour
         {
             x = 0;
         }
+
+        // handle rotation later
+        currentRotation = Mathf.LerpAngle(currentRotation, targetRotation, 0.1f);
+
 
         //movement by character controller
         // movement.MoveTo(new Vector3(x, 0, 0));

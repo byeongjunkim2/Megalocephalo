@@ -5,6 +5,7 @@ using UnityEngine;
 public class scr_cameraFollow : MonoBehaviour
 {
     public Transform target;
+    
     public Vector3 offset;
 
     float smoothTime = 0.3f;
@@ -13,6 +14,9 @@ public class scr_cameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+      //  Quaternion rotX = Quaternion.Euler(new Vector3(45, 0, 0));
+       // transform.rotation = target.rotation +  ;
+
 
         Vector3 targetPos =  target.position + offset;
         transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 2f);

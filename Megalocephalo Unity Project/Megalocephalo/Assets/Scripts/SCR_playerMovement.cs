@@ -96,15 +96,15 @@ public class SCR_playerMovement : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Trigger")
-        {
-            Trigger trigger = other.gameObject.GetComponent<Trigger>();
-            trigger.ActivateTrigger();
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.gameObject.tag == "Trigger")
+    //    {
+    //        Trigger trigger = other.gameObject.GetComponent<Trigger>();
+    //        trigger.ActivateTrigger();
 
-        }
-    }
+    //    }
+    //}
 
 
 

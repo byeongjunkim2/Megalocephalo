@@ -8,11 +8,23 @@ public class Trigger : MonoBehaviour
     bool isActive = false;
 
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Character")
+        {
+            ActivateTrigger();
+
+        }
+    }
+
+
     //temp varialbes
     public scr_cameraFollow cam;
     public Transform fixPosition;
     public Transform playerPostion;
-    public void ActivateTrigger()
+
+    private void ActivateTrigger()
     { 
         if(!isActive)
         {

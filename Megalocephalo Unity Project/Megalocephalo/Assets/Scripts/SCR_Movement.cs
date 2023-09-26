@@ -61,13 +61,6 @@ public class Movement : MonoBehaviour
         //    }
         //}
 
-        if (moveDirection.y > 0 && (characterController.collisionFlags & CollisionFlags.Above) != 0)
-        {
-        
-            moveDirection.y = 0;
-           // isJumping = false;
-        }
-
 
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
 
@@ -91,7 +84,7 @@ public class Movement : MonoBehaviour
         if(characterController.isGrounded == true)
         {
             moveDirection.y = jumpForce;
-            AkSoundEngine.PostEvent("TestSFX", gameObject);
+            AkSoundEngine.PostEvent("TestSFX", gameObject);  // Play jump sfx here
             // isJumping = true;
         }
     }

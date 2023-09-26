@@ -1,6 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1324413170	TestMusic			\Default Work Unit\TestMusic	
-	1650626098	TestSFX			\Default Work Unit\TestSFX	
+	1324413170	TestMusic			\Default Work Unit\Test\TestMusic	
+	1650626098	TestSFX			\Default Work Unit\Test\TestSFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	66690859	Test_Boing	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\Test_Boing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test_Boing		127392

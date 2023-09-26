@@ -3,28 +3,59 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}">
+				<Folder Name="Player" ID="{6D03158D-155A-412F-B22D-FC048F4BFE2B}" ShortID="378678517">
 					<ChildrenList>
-						<Action Name="" ID="{94665A84-FCBF-4CCB-B965-5B4D43A124C4}" ShortID="966940464">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Test_Boing" ID="{A2D64E78-43C9-433C-88E8-F7658B33F2B6}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Folder Name="Movement" ID="{081325C1-CD72-41F3-9019-14229F7408CF}" ShortID="457835543"/>
+						<Folder Name="Combat" ID="{2D19F2A8-54BA-44DC-B63F-851DE2897855}" ShortID="44767546">
+							<ChildrenList>
+								<Event Name="PlayerWeaponFire" ID="{835282D9-4EC5-4BD9-99A2-5CEB899015CB}">
+									<ChildrenList>
+										<Action Name="" ID="{FCAF2332-7BF4-4427-9F4B-0A69F7A5E973}" ShortID="894975372">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Bubble" ID="{3D2F766D-0FE6-48D5-AAAC-03DDAAD69838}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{096012EC-FF6E-47BE-864E-B32F5AC74676}" ShortID="262521864">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Laser" ID="{C0166FE8-3465-46C6-ACB5-40C680C360E7}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-				</Event>
-				<Event Name="TestMusic" ID="{D0356265-CB21-40C4-83D4-12360C256285}">
+				</Folder>
+				<Folder Name="Test" ID="{9EC37465-6EE4-4250-90B0-1E0AA599FC94}" ShortID="889881718">
 					<ChildrenList>
-						<Action Name="" ID="{E65B4916-01FD-4A30-805C-DF5EA1CD970C}" ShortID="591110846">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Music_Test" ID="{6DE4F023-3019-42C9-95C2-6EF89DF68207}" WorkUnitID="{7445F53B-E22C-476E-93F3-C2380D00625E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}">
+							<ChildrenList>
+								<Action Name="" ID="{94665A84-FCBF-4CCB-B965-5B4D43A124C4}" ShortID="966940464">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Test_Boing" ID="{A2D64E78-43C9-433C-88E8-F7658B33F2B6}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TestMusic" ID="{D0356265-CB21-40C4-83D4-12360C256285}">
+							<ChildrenList>
+								<Action Name="" ID="{E65B4916-01FD-4A30-805C-DF5EA1CD970C}" ShortID="591110846">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Test" ID="{6DE4F023-3019-42C9-95C2-6EF89DF68207}" WorkUnitID="{7445F53B-E22C-476E-93F3-C2380D00625E}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

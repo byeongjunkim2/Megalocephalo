@@ -1168,7 +1168,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 1030, y: 220}
+  m_SizeDelta: {x: 1175, y: 220}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1607699389
 MonoBehaviour:
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Megacephalo
+  m_text: Megalocephalo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1e14f8233a349a488f765f102f4799e, type: 2}
   m_sharedMaterial: {fileID: -5996741957593397241, guid: a1e14f8233a349a488f765f102f4799e, type: 2}

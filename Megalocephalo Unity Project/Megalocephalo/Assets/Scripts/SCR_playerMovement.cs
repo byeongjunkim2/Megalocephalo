@@ -17,6 +17,7 @@ public class SCR_playerMovement : MonoBehaviour
 
     public GameObject bullet;
 
+
     // rotation stuff
     private float currentRotation;
     private float targetRotation;
@@ -30,13 +31,13 @@ public class SCR_playerMovement : MonoBehaviour
 
         targetRotation = angleOffset;
         currentRotation = targetRotation;
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+     
         float x = 0; //= Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(rightMoveKeyCode))
         {

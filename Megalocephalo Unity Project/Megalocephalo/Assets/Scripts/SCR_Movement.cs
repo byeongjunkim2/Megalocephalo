@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using AK.Wwise;
 using System;
 
@@ -20,49 +21,57 @@ public class Movement : MonoBehaviour
     private CharacterController characterController;
 
     bool isJumping;
- 
-
-
+    bool InJump;
+    float Coyotetimer =0.0f;
     // Start is called before the first frame update
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
     }
-
+    //Changes 9/26/2023: Jump is depends on Coyote timer and INjump, Jump functions makes Injump=true,
+    //Coyote timer ticks down to 0 when falling, if 0, Injump =false; coyote time resets only when the character is 'grounded'
     // Update is called once per frame
     void Update()
     {
-        if(characterController.isGrounded == false)
+        
+        if (characterController.isGrounded == false)
         {
+            Coyotetimer -= Time.deltaTime;
+            if (Coyotetimer < 0.0f) { InJump = false;  }
             moveDirection.y += gravity * Time.deltaTime;// * 20;
         }
-
+        if(characterController.isGrounded == true )
+        {
+           
+            Coyotetimer = 0.2f;
+        }
+       
         //if (characterController.isGrounded)
         //{
 
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(transform.position, Vector3.down, out hit))
-        //    {
-        //        float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
-        //        if (slopeAngle > characterController.slopeLimit)
-        //        {
-        //            //Debug.DrawRay(transform.position, Vector3.down, Color.green);
-        //            //// 경사면과 수평인 방향을 계산
-        //            ////Vector3 slideDirection = Vector3.(hit.normal, Vector3.up);
-        //            //Vector3 slideDirection = hit.normal + Vector3.up;     
-        //            //// slideDirection = new Vector3(slideDirection.x, 0, 0);
-        //            //moveDirection += slideDirection * slideForce;
+            //    RaycastHit hit;
+            //    if (Physics.Raycast(transform.position, Vector3.down, out hit))
+            //    {
+            //        float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+            //        if (slopeAngle > characterController.slopeLimit)
+            //        {
+            //            //Debug.DrawRay(transform.position, Vector3.down, Color.green);
+            //            //// 경사면과 수평인 방향을 계산
+            //            ////Vector3 slideDirection = Vector3.(hit.normal, Vector3.up);
+            //            //Vector3 slideDirection = hit.normal + Vector3.up;     
+            //            //// slideDirection = new Vector3(slideDirection.x, 0, 0);
+            //            //moveDirection += slideDirection * slideForce;
 
-        //            //moveDirection += gravity * Mathf.Cos(slopeAngle);
-
-
-
-        //        }
-        //    }
-        //}
+            //            //moveDirection += gravity * Mathf.Cos(slopeAngle);
 
 
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+            //        }
+            //    }
+            //}
+
+
+            characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
 
     }
 
@@ -81,8 +90,9 @@ public class Movement : MonoBehaviour
     }
     public void JumpTo()
     {
-        if(characterController.isGrounded == true)
+        if(Coyotetimer> 0.0f && !InJump)
         {
+            InJump = true;
             moveDirection.y = jumpForce;
             AkSoundEngine.PostEvent("TestSFX", gameObject);  // Play jump sfx here
             // isJumping = true;
@@ -97,6 +107,9 @@ public class Movement : MonoBehaviour
         }
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Handles.Label(transform.position, "JUMP: " + InJump);
+    }
 
 }

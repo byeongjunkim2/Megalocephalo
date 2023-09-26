@@ -15,7 +15,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="TestMusic" ID="{D0356265-CB21-40C4-83D4-12360C256285}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayerWeaponFire" ID="{835282D9-4EC5-4BD9-99A2-5CEB899015CB}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="SFX_playerShoot" ID="{835282D9-4EC5-4BD9-99A2-5CEB899015CB}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

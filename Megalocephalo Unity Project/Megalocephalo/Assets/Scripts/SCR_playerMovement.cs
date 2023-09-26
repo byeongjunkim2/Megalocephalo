@@ -81,7 +81,7 @@ public class SCR_playerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(attackKeyCode))
         {
-            AkSoundEngine.PostEvent("PlayerWeaponFire", gameObject); // Play weapon sfx here
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
             GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation );
             Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
             bulletRigid.velocity = transform.forward * 80;

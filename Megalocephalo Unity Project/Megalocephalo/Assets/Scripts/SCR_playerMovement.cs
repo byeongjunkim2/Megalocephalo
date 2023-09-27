@@ -15,8 +15,14 @@ public class SCR_playerMovement : MonoBehaviour
     private Movement movement;
     private Attack attack;
 
+    // attack stuff
     public GameObject bullet;
+    private float chargedTime;
+    private float maxChargeTime = 0.7f;
 
+    // particle
+    public ParticleSystem chargingParticleSystem;
+    public ParticleSystem[] chargingParticleSystems;
 
     // rotation stuff
     private float currentRotation;
@@ -32,12 +38,17 @@ public class SCR_playerMovement : MonoBehaviour
         targetRotation = angleOffset;
         currentRotation = targetRotation;
        
+        chargingParticleSystem = gameObject.GetComponentInChildren<ParticleSystem>(true);
+        chargingParticleSystems = gameObject.GetComponentsInChildren<ParticleSystem>(true);
+
+        chargingParticleSystem.gameObject.SetActive(false); 
     }
 
     // Update is called once per frame
     void Update()
     {
      
+
         float x = 0; //= Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(rightMoveKeyCode))
         {
@@ -82,13 +93,27 @@ public class SCR_playerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(attackKeyCode))
         {
-            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
-            GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation );
-            Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
-            bulletRigid.velocity = transform.forward * 80;
-           // bulletRigid.velocity = transform.right * 80;
-            // transform.right
+            NormalAttack();
+            chargedTime = 0;
         }
+
+        // charge related
+        if (Input.GetKey(attackKeyCode))
+        {
+            chargedTime += Time.deltaTime;
+        }
+        if(chargedTime > maxChargeTime)
+        {
+            Debug.Log("Charging!!\n");
+            chargingParticleSystem.gameObject.SetActive(true);
+            if (Input.GetKeyUp(attackKeyCode))
+            {
+                ChargeAttack();
+                chargedTime = 0;
+                chargingParticleSystem.gameObject.SetActive(false);
+            }
+        }
+
 
         //movement by transform
 
@@ -109,8 +134,29 @@ public class SCR_playerMovement : MonoBehaviour
     //    }
     //}
 
+    private void NormalAttack()
+    {
+        AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
+        GameObject instantBullet = Instantiate(bullet, transform.position, transform.rotation);
+        Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+        bulletRigid.velocity = transform.forward * 80;
+        // bulletRigid.velocity = transform.right * 80;
+        // transform.right
+    }
 
-
-
-
+    private void ChargeAttack()
+    {
+        AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // for now, 3x sound to represent charging attack
+        AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+        AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+        for (int i = 0; i < 3; i++)
+        {
+            Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y + ((i - 1) * 2), transform.position.z);
+            GameObject instantBullet = Instantiate(bullet, bulletPos, transform.rotation);
+            Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+            bulletRigid.velocity = transform.forward * 80;
+        }
+    }
 }
+
+

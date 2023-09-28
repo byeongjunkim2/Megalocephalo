@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
         }
         else if (characterController.isGrounded == true)
         {
-            Coyotetimer = 0.2f;
+            Coyotetimer = 0.15f;
         }
 
       
@@ -102,7 +102,7 @@ public class Movement : MonoBehaviour
             InJump = true;
             moveDirection.y = jumpForce;
             AkSoundEngine.PostEvent("TestSFX", gameObject);  // Play jump sfx here
-            // isJumping = true;
+           
         }
     }
     public void JumpStop()
@@ -110,7 +110,7 @@ public class Movement : MonoBehaviour
         if (characterController.isGrounded == false /*&& isJumping*/ && moveDirection.y > 0)
         {
             moveDirection.y = 0;
-           // isJumping = false;
+          
         }
     }
 

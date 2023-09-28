@@ -28,7 +28,7 @@ public class SCR_playerMovement : MonoBehaviour
     private float currentRotation;
     private float targetRotation;
     public float angleOffset = 45.0f;
-
+    
     // Start is called before the first frame update
     private void Awake()
     {

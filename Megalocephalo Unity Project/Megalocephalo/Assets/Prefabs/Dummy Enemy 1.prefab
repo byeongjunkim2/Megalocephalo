@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7150869975695201229}
   - component: {fileID: 408863909900649929}
   m_Layer: 6
-  m_Name: Dummy Enemy
+  m_Name: Dummy Enemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,8 +149,9 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   inCamera: 0
-  CanShoot: 0
+  CanShoot: 1
   bullet: {fileID: 4383649146452863312, guid: 07c49a8927158c54ab5735f8597111e7, type: 3}
+  Player: {fileID: 2470448335040275558, guid: bf5f0bf35c5c09746a7fe91a3eb64869, type: 3}
 --- !u!114 &408863909900649929
 MonoBehaviour:
   m_ObjectHideFlags: 0

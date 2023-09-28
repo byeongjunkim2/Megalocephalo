@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 using AK.Wwise;
 using System;
+using UnityEngine.EventSystems;
+using static UnityEngine.UI.Image;
 
 public class Movement : MonoBehaviour
 {
@@ -19,14 +21,17 @@ public class Movement : MonoBehaviour
     private Vector3 moveDirection;
 
     private CharacterController characterController;
+    private Renderer characterRenderer;
 
     bool isJumping;
     bool InJump;
     float Coyotetimer =0.0f;
+
     // Start is called before the first frame update
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        characterRenderer = GetComponent<Renderer>();
     }
     //Changes 9/26/2023: Jump is depends on Coyote timer and INjump, Jump functions makes Injump=true,
     //Coyote timer ticks down to 0 when falling, if 0, Injump =false; coyote time resets only when the character is 'grounded'
@@ -37,25 +42,50 @@ public class Movement : MonoBehaviour
         if (characterController.isGrounded == false)
         {
             Coyotetimer -= Time.deltaTime;
-            if (Coyotetimer < 0.0f) { InJump = false;  }
+            if (Coyotetimer < 0.0f) 
+            { 
+                InJump = false;
+            }
             moveDirection.y += gravity * Time.deltaTime;// * 20;
         }
-        if(characterController.isGrounded == true )
+        else if (characterController.isGrounded == true)
         {
-           
             Coyotetimer = 0.2f;
         }
-       
+
       
 
-            characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+        Debug.Log(moveDirection);
+    }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // when character reaches his head on ceiling, it will falling immediately
+        if (InJump == true)
+        {
+            if (Physics.BoxCast(transform.position, characterRenderer.bounds.size * 0.5f, Vector3.up, out RaycastHit hitInfo, Quaternion.identity, 1.05f))
+            {
+                moveDirection.y = 0;
+                Coyotetimer = 0;
+            }
+        }
+
+        // when character collides with floor with falling, it's falling speed will be 0
+        if (moveDirection.y < -0.1)
+        {
+            if (Physics.BoxCast(transform.position, characterRenderer.bounds.size * 0.5f, Vector3.down, out RaycastHit hitInfo, Quaternion.identity,  1.05f))
+            {
+                moveDirection.y = 0;
+                InJump = false;
+            }
+        }
     }
 
     public void MoveTo(Vector3 direction)
     {
-    //    moveDirection = direction;
-       
+        //    moveDirection = direction;
+
         moveDirection = new Vector3(direction.x, moveDirection.y,direction.z);
 
     }

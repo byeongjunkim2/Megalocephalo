@@ -22,7 +22,7 @@ public class SCR_playerMovement : MonoBehaviour
 
     // particle
     public ParticleSystem chargingParticleSystem;
-    public ParticleSystem[] chargingParticleSystems;
+    // public ParticleSystem[] chargingParticleSystems;
 
     // rotation stuff
     private float currentRotation;
@@ -39,7 +39,7 @@ public class SCR_playerMovement : MonoBehaviour
         currentRotation = targetRotation;
        
         chargingParticleSystem = gameObject.GetComponentInChildren<ParticleSystem>(true);
-        chargingParticleSystems = gameObject.GetComponentsInChildren<ParticleSystem>(true);
+        //chargingParticleSystems = gameObject.GetComponentsInChildren<ParticleSystem>(true);
 
         chargingParticleSystem.gameObject.SetActive(false); 
     }

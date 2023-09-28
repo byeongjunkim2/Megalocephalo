@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     }
         public void PlayDemo()
     {
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("Prototype2_3dAsset");
     }
 
     public void PlayAudioZoo()

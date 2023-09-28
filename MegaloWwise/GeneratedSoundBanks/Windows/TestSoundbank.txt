@@ -4,5 +4,5 @@ Event	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	66690859	Test_Boing	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\Test_Boing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test_Boing		127392
-	562467638	MusicDemo	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\MusicDemo_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_Test\Music_Test\MusicDemo		2262952
+	126872802	MusicDemo	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\MusicDemo2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_Test\Music_Test\MusicDemo		11048324
 

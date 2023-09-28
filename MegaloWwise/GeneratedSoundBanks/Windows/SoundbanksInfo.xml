@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{69E63493-281E-FAAA-FBF2-7F181CCA602A}">
+		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{0B5E0DB4-7E63-AB9E-F8A1-7EFBF36D0C35}">
 			<ShortName>TestSoundbank</ShortName>
 			<Path>TestSoundbank.bnk</Path>
 			<Media>
@@ -30,15 +30,15 @@
 					<ShortName>Test_Boing.wav</ShortName>
 					<CachePath>SFX/Test_Boing_10C4C929.wem</CachePath>
 				</File>
-				<File Id="562467638" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MusicDemo.wav</ShortName>
-					<CachePath>SFX/MusicDemo_D79FB2B7.wem</CachePath>
+				<File Id="126872802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MusicDemo2.wav</ShortName>
+					<CachePath>SFX/MusicDemo2_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
 				<Event Id="1324413170" Name="TestMusic" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="562467638"/>
+						<MediaRef Id="126872802"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1650626098" Name="TestSFX" DurationType="OneShot" DurationMin="0.663" DurationMax="0.663">
@@ -48,7 +48,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{576AD670-32D9-4102-3C46-3C27C1549499}">
+		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{C0833D10-DCAD-A4A8-4CF5-DCF032356FCB}">
 			<ShortName>MainBank</ShortName>
 			<Path>MainBank.bnk</Path>
 			<Media>
@@ -68,6 +68,10 @@
 					<ShortName>sfx_player_rangedWeapon_bubble_02.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_bubble_02_10C4C929.wem</CachePath>
 				</File>
+				<File Id="126872802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MusicDemo2.wav</ShortName>
+					<CachePath>SFX/MusicDemo2_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="167822009" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_bubble_03.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_bubble_03_10C4C929.wem</CachePath>
@@ -83,10 +87,6 @@
 				<File Id="461077377" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_laser_01.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_laser_01_10C4C929.wem</CachePath>
-				</File>
-				<File Id="562467638" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MusicDemo.wav</ShortName>
-					<CachePath>SFX/MusicDemo_D79FB2B7.wem</CachePath>
 				</File>
 				<File Id="702952511" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_bubble_00.wav</ShortName>
@@ -108,7 +108,7 @@
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="562467638"/>
+						<MediaRef Id="126872802"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1650626098" Name="TestSFX" DurationType="OneShot" DurationMin="0.663" DurationMax="0.663">
@@ -119,5 +119,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E65CA2DA-FBE0-33B7-2D8A-069B41F0005E}</FileHash>
+	<FileHash>{DB40C0D3-A392-E2D7-648F-88055B92A3E1}</FileHash>
 </SoundBanksInfo>

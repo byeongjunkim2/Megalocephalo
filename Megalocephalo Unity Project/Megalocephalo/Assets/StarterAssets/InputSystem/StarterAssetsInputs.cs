@@ -57,11 +57,11 @@ namespace StarterAssets
 
 
         public void OnTestRotate()
-		{
+        {
             Debug.Log("rotate key test");
         }
 
-		public void OnSprint(InputValue value)
+        public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}

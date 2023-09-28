@@ -90,6 +90,13 @@ namespace StarterAssets
         private float _verticalVelocity;
         //private float _terminalVelocity = 530.0f;
 
+        // player special movement
+        private float chargedTime;
+        private float maxChargeTime = 0.7f;
+
+        // effect related
+        public ParticleSystem chargingParticleSystem;
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -133,6 +140,10 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+
+            // particle system get
+            chargingParticleSystem = gameObject.GetComponentInChildren<ParticleSystem>(true);
+            chargingParticleSystem.gameObject.SetActive(false);
         }
 
         private void Start()
@@ -165,15 +176,25 @@ namespace StarterAssets
 
             if (Input.GetKeyDown(attackKeyCode))
             {
+                NormalAttack();
+                chargedTime = 0;
+            }
 
-                AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
-                GameObject instantBullet = Instantiate(bullet, transform.position +new Vector3(0,5,0), transform.rotation);
-                Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
-
-                Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-                bulletRigid.velocity = targetDirection * 80;
-                // bulletRigid.velocity = transform.right * 80;
-                // transform.right
+            // charge related
+            if (Input.GetKey(attackKeyCode))
+            {
+                chargedTime += Time.deltaTime;
+            }
+            if (chargedTime > maxChargeTime)
+            {
+                Debug.Log("Charging!!\n");
+                chargingParticleSystem.gameObject.SetActive(true);
+                if (Input.GetKeyUp(attackKeyCode))
+                {
+                    ChargeAttack();
+                    chargedTime = 0;
+                    chargingParticleSystem.gameObject.SetActive(false);
+                }
             }
 
 
@@ -425,5 +446,47 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
+
+
+
+
+        private void NormalAttack()
+        {
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
+            GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
+            Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+            Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+            bulletRigid.velocity = targetDirection * 80;
+        }
+
+        private void ChargeAttack()
+        {
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // for now, 3x sound to represent charging attack
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+            for (int i = 0; i < 3; i++)
+            {
+                Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y + ((i - 1) * 2), transform.position.z) + new Vector3(0, 5, 0);
+                GameObject instantBullet = Instantiate(bullet, bulletPos, transform.rotation);
+                Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+                Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+                bulletRigid.velocity = targetDirection * 80;
+            }
+        }
+        //private void asdasdsa()
+        //{
+        //    if (Input.GetKeyDown(attackKeyCode))
+        //    {
+
+        //        AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
+        //        GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
+        //        Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+
+        //        Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+        //        bulletRigid.velocity = targetDirection * 80;
+        //        // bulletRigid.velocity = transform.right * 80;
+        //        // transform.right
+        //    }
+        //}
     }
 }

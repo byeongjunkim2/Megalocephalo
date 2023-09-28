@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
       
 
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
-        Debug.Log(moveDirection);
+        //Debug.Log(moveDirection);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

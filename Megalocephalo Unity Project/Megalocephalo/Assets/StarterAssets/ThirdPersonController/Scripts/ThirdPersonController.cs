@@ -88,6 +88,7 @@ namespace StarterAssets
         private float _targetRotation = 0.0f;
         private float _rotationVelocity;
         private float _verticalVelocity;
+        private Renderer characterRenderer;
         //private float _terminalVelocity = 530.0f;
 
         // player special movement
@@ -140,6 +141,9 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
+
+            // player related
+            characterRenderer = GetComponentInChildren<CapsuleCollider>().GetComponent<Renderer>();
 
             // particle system get
             chargingParticleSystem = gameObject.GetComponentInChildren<ParticleSystem>(true);
@@ -447,10 +451,22 @@ namespace StarterAssets
             }
         }
 
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            // when character reaches his head on ceiling, it will falling immediately
+            if (Grounded == false)
+            {
+                if (Physics.BoxCast(transform.position, characterRenderer.bounds.size * 0.5f, Vector3.up, out RaycastHit hitInfo, Quaternion.identity, 1.1f))
+                {
+                    _verticalVelocity = 0;
+                    _fallTimeoutDelta = 0;
+                }
+            }
+        }
 
 
 
-        private void NormalAttack()
+            private void NormalAttack()
         {
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
             GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);

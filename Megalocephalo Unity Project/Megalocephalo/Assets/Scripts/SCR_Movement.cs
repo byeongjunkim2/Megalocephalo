@@ -46,30 +46,7 @@ public class Movement : MonoBehaviour
             Coyotetimer = 0.2f;
         }
        
-        //if (characterController.isGrounded)
-        //{
-
-            //    RaycastHit hit;
-            //    if (Physics.Raycast(transform.position, Vector3.down, out hit))
-            //    {
-            //        float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
-            //        if (slopeAngle > characterController.slopeLimit)
-            //        {
-            //            //Debug.DrawRay(transform.position, Vector3.down, Color.green);
-            //            //// 경사면과 수평인 방향을 계산
-            //            ////Vector3 slideDirection = Vector3.(hit.normal, Vector3.up);
-            //            //Vector3 slideDirection = hit.normal + Vector3.up;     
-            //            //// slideDirection = new Vector3(slideDirection.x, 0, 0);
-            //            //moveDirection += slideDirection * slideForce;
-
-            //            //moveDirection += gravity * Mathf.Cos(slopeAngle);
-
-
-
-            //        }
-            //    }
-            //}
-
+      
 
             characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
 

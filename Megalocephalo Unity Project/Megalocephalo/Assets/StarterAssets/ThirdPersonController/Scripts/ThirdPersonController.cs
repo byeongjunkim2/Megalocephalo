@@ -37,7 +37,7 @@ namespace StarterAssets
         public float JumpHeight = 1.2f;
 
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
-        public float Gravity = -15.0f;
+        public float Gravity = -9.81f;
 
         [Space(10)]
         [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
@@ -75,6 +75,9 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        public GameObject bullet;
+        private KeyCode attackKeyCode = KeyCode.X;
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -85,7 +88,7 @@ namespace StarterAssets
         private float _targetRotation = 0.0f;
         private float _rotationVelocity;
         private float _verticalVelocity;
-        private float _terminalVelocity = 53.0f;
+        //private float _terminalVelocity = 530.0f;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -159,6 +162,21 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+
+            if (Input.GetKeyDown(attackKeyCode))
+            {
+
+                AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
+                GameObject instantBullet = Instantiate(bullet, transform.position +new Vector3(0,5,0), transform.rotation);
+                Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+
+                Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+                bulletRigid.velocity = targetDirection * 80;
+                // bulletRigid.velocity = transform.right * 80;
+                // transform.right
+            }
+
+
         }
 
         private void LateUpdate()
@@ -192,7 +210,7 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
-            // if there is an input and camera position is not fixed
+            //// if there is an input and camera position is not fixed
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
                 //Don't multiply mouse input by Time.deltaTime;
@@ -270,6 +288,14 @@ namespace StarterAssets
             // move the player
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            //_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+            //     new Vector3(0.0f, _verticalVelocity, 0.0f) * _speed* Time.deltaTime);
+
+            //_controller.Move( (targetDirection + new Vector3(0.0f, _verticalVelocity, 0.0f) )* _speed * Time.deltaTime);
+
+            //targetDirection = new Vector3(targetDirection.x, _verticalVelocity, targetDirection.z);
+            //_controller.Move(targetDirection * _speed * Time.deltaTime);
+
 
             // update animator if using character
             if (_hasAnimator)
@@ -304,9 +330,12 @@ namespace StarterAssets
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+                    //   _verticalVelocity = JumpHeight;
 
+
+   
                     // update animator if using character
-                    if (_hasAnimator)
+                        if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDJump, true);
                     }
@@ -342,10 +371,12 @@ namespace StarterAssets
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-            if (_verticalVelocity < _terminalVelocity)
-            {
-                _verticalVelocity += Gravity * Time.deltaTime;
-            }
+            //if (_verticalVelocity < _terminalVelocity)
+            //{
+            _verticalVelocity += Gravity * Time.deltaTime;
+            //   }
+           // targetDirection.y += Gravity * Time.deltaTime;// * 20;
+
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

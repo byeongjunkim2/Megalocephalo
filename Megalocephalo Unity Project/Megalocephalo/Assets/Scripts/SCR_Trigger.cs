@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,8 @@ public class Trigger : MonoBehaviour
 
 
     //temp varialbes
-    public scr_cameraFollow cam;
+    //public scr_cameraFollow cam;
+    public GameObject followCam;
     public Transform fixPosition;
     public Transform playerPostion;
 
@@ -29,13 +31,18 @@ public class Trigger : MonoBehaviour
         if(!isActive)
         {
             //   cam = GetComponent<Camera>();
-            cam.target = fixPosition;
-            isActive = true;
+            //cam.target = fixPosition;
+            //  followCam.GetComponent<Cinemachine>();
+            CinemachineVirtualCamera virtualCamera = followCam.GetComponent<CinemachineVirtualCamera>();
+            virtualCamera.Follow = fixPosition;
+             isActive = true;
             Debug.Log("trigger on");
         }
         else
         {
-            cam.target = playerPostion;
+            // cam.target = playerPostion;
+            CinemachineVirtualCamera virtualCamera = followCam.GetComponent<CinemachineVirtualCamera>();
+            virtualCamera.Follow = playerPostion;
             isActive = false;
             Debug.Log("trigger off");
         }

@@ -11,7 +11,8 @@ namespace StarterAssets
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
-		public bool sprint;
+        public bool jumpReleased;
+        public bool sprint;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -36,8 +37,24 @@ namespace StarterAssets
 
 		public void OnJump(InputValue value)
 		{
-			JumpInput(value.isPressed);
+			//value.
+			//JumpInput(value.isPressed);
+			if (value.isPressed)
+			{
+			
+				JumpInput(true);
+				Debug.Log("KeyPRessing");
+			}
+
+
+
 		}
+
+
+        public void OnTestRotate()
+		{
+            Debug.Log("rotate key test");
+        }
 
 		public void OnSprint(InputValue value)
 		{
@@ -60,8 +77,14 @@ namespace StarterAssets
 		{
 			jump = newJumpState;
 		}
+		public void JumpReleased(bool newJumpState)
+		{
+            jumpReleased = newJumpState;
+        }
 
-		public void SprintInput(bool newSprintState)
+
+
+        public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
 		}

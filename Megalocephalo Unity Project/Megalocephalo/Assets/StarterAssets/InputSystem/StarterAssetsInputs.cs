@@ -43,9 +43,14 @@ namespace StarterAssets
 			{
 			
 				JumpInput(true);
+				JumpReleased(false);
 				Debug.Log("KeyPRessing");
 			}
-
+			else
+			{
+				JumpReleased(true);
+				Debug.Log("KeyReleasing");
+			}
 
 
 		}

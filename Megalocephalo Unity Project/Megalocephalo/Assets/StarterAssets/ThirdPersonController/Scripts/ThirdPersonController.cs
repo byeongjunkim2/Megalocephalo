@@ -143,7 +143,7 @@ namespace StarterAssets
 
             // particle system get
             chargingParticleSystem = gameObject.GetComponentInChildren<ParticleSystem>(true);
-            chargingParticleSystem.gameObject.SetActive(false);
+         //   chargingParticleSystem.gameObject.SetActive(false);
         }
 
         private void Start()

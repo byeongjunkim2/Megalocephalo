@@ -41,15 +41,19 @@ public class TestRotate : MonoBehaviour
 
         transform.rotation = Quaternion.Lerp(currentRotation, targetRotation, Time.deltaTime * rotationSpeed);
 
-        // 회전이 목표 각도에 근접하면 회전 중지
+        // 
         if (Quaternion.Angle(currentRotation, targetRotation) < 1f)
         {
             isRotating = false;
-            transform.rotation = targetRotation;  // 정확한 각도로 설정
+            transform.rotation = targetRotation;  // 
         }
     }
 
-
+    public void StartRotate(float angle)
+    {
+        targetRotationY += angle;
+        isRotating = true;
+    }
 
 
 }

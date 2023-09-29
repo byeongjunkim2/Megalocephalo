@@ -85,7 +85,7 @@ namespace StarterAssets
         // player
         private float _speed;
         private float _animationBlend;
-        private float _targetRotation = 0.0f;
+        private float _targetRotation = 90.0f;
         private float _rotationVelocity;
         private float _verticalVelocity;
         private Renderer characterRenderer;
@@ -300,17 +300,42 @@ namespace StarterAssets
             {
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
+
+                //_targetRotation = _mainCamera.transform.eulerAngles.y ;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                     RotationSmoothTime);
 
+                //if (rotation >= 0 && rotation < 180)
+                //{
+                //    rotation = 0;
+                //}
+                //else
+                //{
+                //    rotation = 180;
+                //}
+
                 // rotate to face input direction relative to camera position
                 transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+                //if (Quaternion.Angle(currentRotation, targetRotation) < 1f)
+                //{
+                //    isRotating = false;
+                //    transform.rotation = targetRotation;  // 
+                    
+                //}
             }
 
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
             // move the player
+
+
+
+
+              
+            
+             
+
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
             //_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
@@ -489,6 +514,14 @@ namespace StarterAssets
                 bulletRigid.velocity = targetDirection * 80;
             }
         }
+
+
+        public void AdjustPosition(Transform newPos)
+        {
+            transform.position = new Vector3(newPos.position.x , transform.position.y, newPos.position.z);
+        }
+
+
         //private void asdasdsa()
         //{
         //    if (Input.GetKeyDown(attackKeyCode))

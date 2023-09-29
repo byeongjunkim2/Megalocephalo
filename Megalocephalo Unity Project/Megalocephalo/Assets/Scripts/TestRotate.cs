@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Windows;
 
-public class TestRotate : MonoBehaviour
+public class CamRotate : MonoBehaviour
 {
     public float rotationSpeed = 1f;
     public float targetRotationY = 0f;
@@ -14,7 +14,7 @@ public class TestRotate : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        targetRotationY = transform.rotation.y;
+        targetRotationY = transform.rotation.y;//temp test key
     }
 
     // Update is called once per frame

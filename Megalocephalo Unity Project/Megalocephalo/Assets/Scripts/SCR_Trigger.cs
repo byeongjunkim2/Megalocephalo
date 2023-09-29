@@ -1,4 +1,5 @@
 using Cinemachine;
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -16,10 +17,17 @@ public class Trigger : MonoBehaviour
     public GameObject followCam;
     public Transform fixPosition;
     public Transform playerPostion;
+    public GameObject player;
     //```````````````````````````````````
     public float rotationSpeed = 1f;
     public float targetRotationY = 0f;
-    private bool isRotating = false;
+    //private bool isRotating = false;
+
+    private void Awake()
+    {
+        
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,6 +47,10 @@ public class Trigger : MonoBehaviour
         {
             case TriggerType.CamRotation:
                 RotateCamera();
+                //Vector3 newPos = transform.position;
+                player.GetComponent<ThirdPersonController>().AdjustPosition(transform);
+                //player.transform.position.x = transform.position.x;
+
                 break;
             case TriggerType.ChangeTarget:
                 ChangeFollowObject();
@@ -78,14 +90,15 @@ public class Trigger : MonoBehaviour
 
             //followcam targetangle += rotate degree
             //followcma isrotating = true;
-            followCam.GetComponent<TestRotate>().StartRotate(targetRotationY);
+            followCam.GetComponent<CamRotate>().StartRotate(targetRotationY);
+            //playerPostion.transform.position.x =  transform.position.x;
 
             isActive = true;
             //  StartCoroutine("TriggerDelay");
         }
         else
         {
-            followCam.GetComponent<TestRotate>().StartRotate(-targetRotationY);
+            followCam.GetComponent<CamRotate>().StartRotate(-targetRotationY);
 
             isActive = false;
         }

@@ -382,11 +382,10 @@ namespace StarterAssets
                     AkSoundEngine.PostEvent("TESTSFX", gameObject);
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
                     //   _verticalVelocity = JumpHeight;
-
-
+                    Debug.Log("JUMP!");
    
                     // update animator if using character
-                        if (_hasAnimator)
+                    if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDJump, true);
                     }
@@ -492,7 +491,7 @@ namespace StarterAssets
 
 
 
-            private void NormalAttack()
+         private void NormalAttack()
         {
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
             GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);

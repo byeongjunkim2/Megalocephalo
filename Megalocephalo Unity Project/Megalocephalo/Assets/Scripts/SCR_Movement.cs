@@ -116,7 +116,7 @@ public class Movement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Handles.Label(transform.position, "JUMP: " + InJump);
+        //Handles.Label(transform.position, "JUMP: " + InJump);
     }
 
 }

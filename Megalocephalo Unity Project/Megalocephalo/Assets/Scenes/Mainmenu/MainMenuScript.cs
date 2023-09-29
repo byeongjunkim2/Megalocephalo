@@ -14,7 +14,8 @@ public class NewBehaviourScript : MonoBehaviour
         AudioZooB.onClick.AddListener(PlayAudioZoo);
         QuitB.onClick.AddListener(Quit);
     }
-        public void PlayDemo()
+
+    public void PlayDemo()
     {
         SceneManager.LoadScene("Prototype2_3dAsset");
     }

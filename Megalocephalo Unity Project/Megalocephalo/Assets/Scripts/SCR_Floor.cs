@@ -15,7 +15,6 @@ public class SCR_Floor : MonoBehaviour
 
     bool goingEndPos = true;
 
-
     // Start is called before the first frame update
     void Start()
     {

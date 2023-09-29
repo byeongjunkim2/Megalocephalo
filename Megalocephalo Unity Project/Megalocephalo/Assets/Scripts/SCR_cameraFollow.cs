@@ -8,8 +8,8 @@ public class scr_cameraFollow : MonoBehaviour
     
     public Vector3 offset;
 
-    float smoothTime = 0.3f;
-    Vector3 smoothVelocity = Vector3.zero;
+    //float smoothTime = 0.3f;
+    //Vector3 smoothVelocity = Vector3.zero;
 
     // Update is called once per frame
     void FixedUpdate()

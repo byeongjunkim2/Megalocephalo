@@ -14,6 +14,7 @@
 				<SoundBank Name="MainBank" ID="{74635E63-74A0-4E14-8A54-4842C91940B4}">
 					<ObjectInclusionList>
 						<ObjectRef Name="TestMusic" ID="{D0356265-CB21-40C4-83D4-12360C256285}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="StopAll" ID="{06261D82-705C-412A-B314-E7BE5EEC5B50}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_playerShoot" ID="{835282D9-4EC5-4BD9-99A2-5CEB899015CB}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

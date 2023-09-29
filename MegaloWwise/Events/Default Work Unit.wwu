@@ -56,6 +56,20 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Debug" ID="{3ED6C791-8A9D-4382-9858-F11560F72380}" ShortID="1059427573">
+					<ChildrenList>
+						<Event Name="StopAll" ID="{06261D82-705C-412A-B314-E7BE5EEC5B50}">
+							<ChildrenList>
+								<Action Name="" ID="{5014C49A-DAC9-4B56-A934-8730566B3B04}" ShortID="535934324">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

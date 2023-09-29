@@ -2,6 +2,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1324413170	TestMusic			\Default Work Unit\Test\TestMusic	
 	1650626098	TestSFX			\Default Work Unit\Test\TestSFX	
 	1882098847	SFX_playerShoot			\Default Work Unit\Player\Combat\SFX_playerShoot	
+	3086540886	StopAll			\Default Work Unit\Debug\StopAll	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	12839961	sfx_player_rangedWeapon_laser_00	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_laser_00_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\RangedWeapon\Laser\sfx_player_rangedWeapon_laser_00		44066

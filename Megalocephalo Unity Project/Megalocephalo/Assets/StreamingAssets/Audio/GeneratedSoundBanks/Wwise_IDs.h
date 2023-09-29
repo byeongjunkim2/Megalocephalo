@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID SFX_PLAYERSHOOT = 1882098847U;
+        static const AkUniqueID STOPALL = 3086540886U;
         static const AkUniqueID TESTMUSIC = 1324413170U;
         static const AkUniqueID TESTSFX = 1650626098U;
     } // namespace EVENTS

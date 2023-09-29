@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{0B5E0DB4-7E63-AB9E-F8A1-7EFBF36D0C35}">
+		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{91C96B07-9CD2-8791-6A96-A487B2B3C49E}">
 			<ShortName>TestSoundbank</ShortName>
 			<Path>TestSoundbank.bnk</Path>
 			<Media>
@@ -48,7 +48,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{C0833D10-DCAD-A4A8-4CF5-DCF032356FCB}">
+		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{1E331EF8-DC82-672D-0C1A-D41478C3906F}">
 			<ShortName>MainBank</ShortName>
 			<Path>MainBank.bnk</Path>
 			<Media>
@@ -106,6 +106,7 @@
 						<MediaRef Id="702952511"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3086540886" Name="StopAll" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1324413170" Name="TestMusic" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="126872802"/>
@@ -119,5 +120,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DB40C0D3-A392-E2D7-648F-88055B92A3E1}</FileHash>
+	<FileHash>{28AC2FA0-3392-34AF-26A3-4A131A71CB48}</FileHash>
 </SoundBanksInfo>

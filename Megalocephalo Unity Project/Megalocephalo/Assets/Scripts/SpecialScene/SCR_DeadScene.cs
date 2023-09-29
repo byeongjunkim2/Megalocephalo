@@ -16,6 +16,7 @@ public class SCR_DeadScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AkSoundEngine.PostEvent("StopAll", gameObject); // Stop all audio upon load
         MainMenuButton.onClick.AddListener(GoMainMenu);
     }
 

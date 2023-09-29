@@ -46,12 +46,13 @@ public class PauseMenu : MonoBehaviour
 
     public void ToSettingMenu()
     {
-        Debug.Log("아직 미구현입니다...");
+        Debug.Log("아햨E미구현입니다...");
     }
 
     public void OnCliCKToMainMenu()
     {
-        Debug.Log("아직 미구현입니다...");
+        AkSoundEngine.PostEvent("StopAll", gameObject); // Stop all audio upon returning to Main Menu
+        Debug.Log("아햨E미구현입니다...");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Mainmenu");
     }

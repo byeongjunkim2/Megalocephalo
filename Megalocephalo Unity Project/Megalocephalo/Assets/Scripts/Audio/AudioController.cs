@@ -9,10 +9,17 @@ using AK.Wwise;
 
 public class AudioController : MonoBehaviour
 {
+    // Variables for various control functions
+    private bool musicPlaying;
+
     // Start is called before the first frame update
     void Start()
     {
-        AkSoundEngine.PostEvent("TestMusic", gameObject);
+        if (musicPlaying == false)
+        {
+            AkSoundEngine.PostEvent("TestMusic", gameObject);
+            musicPlaying = true;
+        }
     }
 
     // Update is called once per frame

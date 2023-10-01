@@ -46,9 +46,10 @@ public class Trigger : MonoBehaviour
         switch (type)
         {
             case TriggerType.CamRotation:
+                //player.GetComponent<ThirdPersonController>().AdjustPosition(transform.position);
+                player.transform.position = transform.position;
                 RotateCamera();
                 //Vector3 newPos = transform.position;
-                player.GetComponent<ThirdPersonController>().AdjustPosition(transform);
                 //player.transform.position.x = transform.position.x;
 
                 break;

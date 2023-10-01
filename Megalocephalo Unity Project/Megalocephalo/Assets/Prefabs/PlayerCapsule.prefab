@@ -4993,7 +4993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5896423863279052091}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 1.387, z: 0.185}
+  m_LocalPosition: {x: 0, y: 1.387, z: 0.182}
   m_LocalScale: {x: 0.6, y: 0.2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5113,7 +5113,7 @@ Transform:
   - {fileID: 1053092945600443609}
   - {fileID: 1958547382720667601}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!143 &6969641489051989627
 CharacterController:
@@ -5155,11 +5155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 20
   SprintSpeed: 30
-  RotationSmoothTime: 0.12
+  RotationSmoothTime: 0.088
   SpeedChangeRate: 10
-  LandingAudioClip: {fileID: 0}
-  FootstepAudioClips: []
-  FootstepAudioVolume: 0.5
   JumpHeight: 20
   Gravity: -147
   JumpTimeout: 0
@@ -5310,7 +5307,7 @@ MonoBehaviour:
   jumpReleased: 0
   sprint: 0
   analogMovement: 0
-  cursorLocked: 1
+  cursorLocked: 0
   cursorInputForLook: 1
 --- !u!114 &9213195232971718971
 MonoBehaviour:
@@ -5324,7 +5321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500ce96715fe60a479fef59104fddcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 25
   jumpForce: 4
   gravity: -9.81
   slideForce: 5

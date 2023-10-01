@@ -475,9 +475,11 @@ namespace StarterAssets
         }
 
 
-        public void AdjustPosition(Transform newPos)
+        public void AdjustPosition(Vector3 newPos)
         {
-            transform.position = new Vector3(newPos.position.x , transform.position.y, newPos.position.z);
+            transform.position = new Vector3(newPos.x , transform.position.y, newPos.z);
+            Debug.Log("adjust pos");
+
         }
 
 

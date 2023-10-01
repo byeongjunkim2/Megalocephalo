@@ -28,9 +28,11 @@ namespace StarterAssets
         [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;
 
+        /*  Unneeded, will be replaced with Wwise
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
+        */
 
         [Space(10)]
         [Tooltip("The height the player can jump")]
@@ -379,11 +381,11 @@ namespace StarterAssets
                 if (  _input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
-                    AkSoundEngine.PostEvent("TESTSFX", gameObject);
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
                     //   _verticalVelocity = JumpHeight;
                     Debug.Log("JUMP!");
-   
+                    AkSoundEngine.PostEvent("TESTSFX", gameObject);
+
                     // update animator if using character
                     if (_hasAnimator)
                     {
@@ -460,11 +462,12 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
+                /*  Needs to be replaced with Wwise
                 if (FootstepAudioClips.Length > 0)
                 {
                     var index = Random.Range(0, FootstepAudioClips.Length);
                     AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
-                }
+                }*/
             }
         }
 
@@ -472,7 +475,9 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
+                /* Needs to be replaced with Wwise
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                */
             }
         }
 

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{159DF2E4-3188-4FBE-B980-4B6A8D629E10}" SchemaVersion="110">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{159DF2E4-3188-4FBE-B980-4B6A8D629E10}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{159DF2E4-3188-4FBE-B980-4B6A8D629E10}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Music_States" ID="{A60A4007-E5B1-481A-9B56-5999437A0575}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="2"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

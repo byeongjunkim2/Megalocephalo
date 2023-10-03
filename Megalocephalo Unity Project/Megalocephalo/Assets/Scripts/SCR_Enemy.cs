@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // hp related
     public int maxHealth;
-    public int health;
+     public int health;
+
+    // camera related
     public bool inCamera;
+    UnityEngine.Camera cam;
+
+    // behavior related 
     private float shoottimer = 1.3f;
     public bool CanShoot;
+
     //Rigidbody rigid;
     BoxCollider boxCollider;
     Material mat;
-    UnityEngine.Camera cam;
     Color originColor;
     public GameObject bullet;
     public GameObject Player;
 
     private void Awake()
     {
-      //  rigid = GetComponent<Rigidbody>();
+        //scr_hp = GetComponent<SCR_HP>();
+        //  rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         mat = GetComponent<MeshRenderer>().material;
         cam = UnityEngine.Camera.main;
@@ -33,6 +40,7 @@ public class Enemy : MonoBehaviour
     if (other.tag == "Bullet")
         {
             Bullet bullet = other.GetComponent<Bullet>();
+            // gameObject.GetComponent<Script>();
             health -= bullet.damage;
             StartCoroutine(OnDamage());
             Debug.Log("Current Enemy HP : " + health);

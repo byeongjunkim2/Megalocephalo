@@ -5,12 +5,12 @@ using UnityEngine;
 
 using HPType = System.Int32;
 
-public class SCR_HP : MonoBehaviour
+public class HealthPoint : MonoBehaviour
 {
-    HPType maxHP;
+    HPType maxHP = 10; // should be public?
     HPType currentHP;
 
-    double maxInvulnerableTimeWhenDamaged;
+    double maxInvulnerableTimeWhenDamaged = 0.15; // should be public?
     double currInvulnerableTime;
 
     double deltaTimeMultiplier = 1.0;

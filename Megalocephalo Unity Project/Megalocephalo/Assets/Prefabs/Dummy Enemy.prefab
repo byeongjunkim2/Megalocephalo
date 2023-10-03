@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3944277469021955961}
   - component: {fileID: 7150869975695201229}
   - component: {fileID: 408863909900649929}
+  - component: {fileID: 8591109749900234367}
   m_Layer: 6
   m_Name: Dummy Enemy
   m_TagString: Enemy
@@ -151,6 +152,7 @@ MonoBehaviour:
   inCamera: 0
   CanShoot: 0
   bullet: {fileID: 4383649146452863312, guid: 07c49a8927158c54ab5735f8597111e7, type: 3}
+  Player: {fileID: 0}
 --- !u!114 &408863909900649929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +169,15 @@ MonoBehaviour:
   jumpForce: 3
   gravity: -9.81
   slideForce: 5
+--- !u!114 &8591109749900234367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7137021327114696295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be66a57e1ae3a34d8a0b03652550514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

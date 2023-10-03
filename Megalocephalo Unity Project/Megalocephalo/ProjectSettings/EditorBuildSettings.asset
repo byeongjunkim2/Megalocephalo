@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SpecialScenes/DeadScene.unity
     guid: be3ae1902a04f7b4e9679b7b386a7900
   - enabled: 0
-    path: Assets/Scenes/Prototype/Prototype.unity
+    path: Assets/Scenes/Prototype/OldFile/Prototype.unity
     guid: 0b4737a0ad7cf644083362be81dd62dc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

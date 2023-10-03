@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    
     public int damage;
+    public GameObject host;
+
+    public enum BulletType { Bullet,}    
+    public BulletType type;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +21,29 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
+            //other.gameObject.GetComponent<HealthPoint>().IsDead();
         }
+
+        switch (host.tag)
+        {
+            case "Enemy":
+
+
+
+                break;
+            case "Player":
+
+
+                break;
+            default: 
+                break;
+        }
+
+
+
+
     }
+
+
+
 }

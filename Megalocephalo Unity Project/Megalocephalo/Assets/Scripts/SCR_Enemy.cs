@@ -54,6 +54,16 @@ public class Enemy : MonoBehaviour
             Shoot();
             shoottimer = 1.3f;
         }
+
+        if (hp.IsInvulnerable())    //make box red when it get damaged
+        {
+            mat.color = Color.red;
+        }
+        else
+        {
+            mat.color = originColor;
+        }
+
     }
     private void Shoot()
     {

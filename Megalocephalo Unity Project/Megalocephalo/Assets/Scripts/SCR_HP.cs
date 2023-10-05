@@ -55,7 +55,8 @@ public class HealthPoint : MonoBehaviour
     // returns if invulnerable
     public bool IsInvulnerable()
     {
-        return currInvulnerableTime > 0;
+        //return currInvulnerableTime > 0;
+        return isInvulnerable;
     }
 
     // returns if dead 

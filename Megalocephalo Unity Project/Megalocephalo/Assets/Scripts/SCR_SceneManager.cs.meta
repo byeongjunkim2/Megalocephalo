@@ -3,7 +3,9 @@ guid: 79aae3b007a6738498c24f32b21f0f99
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - deadSceneUI: {fileID: 655453002186912177, guid: bc3d2855d1b779f49b6ea56e39121b84, type: 3}
+  - character: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

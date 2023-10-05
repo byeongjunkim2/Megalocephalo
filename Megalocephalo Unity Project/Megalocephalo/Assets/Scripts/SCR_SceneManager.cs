@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SCR_SceneManager : MonoBehaviour
 {
-
+    public Canvas deadSceneCanvasUI;
     public GameObject character;
-    
+    private bool isFallen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,12 @@ public class SCR_SceneManager : MonoBehaviour
     {
         if(character.gameObject.transform.position.y < -50)
         {
-            SceneManager.LoadScene("DeadScene");
+            deadSceneCanvasUI.gameObject.SetActive(true);
+            if(isFallen == false)
+            {
+                isFallen = true;
+                Debug.Log("Over -50");
+            }
         }
     }
 }

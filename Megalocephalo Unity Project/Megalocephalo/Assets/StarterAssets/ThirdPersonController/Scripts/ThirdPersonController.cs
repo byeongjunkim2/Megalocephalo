@@ -454,6 +454,7 @@ namespace StarterAssets
         {
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
             GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
+            instantBullet.GetComponent<Bullet>().SetBullet(this.gameObject , Bullet.BulletType.bullet);
             Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
             bulletRigid.velocity = targetDirection * 80;

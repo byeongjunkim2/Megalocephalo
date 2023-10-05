@@ -22,10 +22,11 @@ public class Enemy : MonoBehaviour
     Color originColor;
     public GameObject bullet;
     public GameObject Player;
+    HealthPoint hp;
 
     private void Awake()
     {
-        //scr_hp = GetComponent<SCR_HP>();
+        hp = GetComponent<HealthPoint>();
         //  rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         mat = GetComponent<MeshRenderer>().material;
@@ -35,17 +36,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-    if (other.tag == "Bullet")
-        {
-            Bullet bullet = other.GetComponent<Bullet>();
-            // gameObject.GetComponent<Script>();
-            health -= bullet.damage;
-            StartCoroutine(OnDamage());
-            Debug.Log("Current Enemy HP : " + health);
-        }
-    }
     private void Update()
     {
        
@@ -68,6 +58,7 @@ public class Enemy : MonoBehaviour
     private void Shoot()
     {
         GameObject instantBullet = Instantiate(bullet, transform.position + (transform.forward*3), transform.rotation);
+        instantBullet.GetComponent<Bullet>().SetBullet(this.gameObject, Bullet.BulletType.bullet);
         Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
         bulletRigid.velocity = transform.forward * 50;
     }
@@ -102,24 +93,4 @@ public class Enemy : MonoBehaviour
         
     }
    
-
-
-
-    IEnumerator OnDamage()
-    {
-        mat.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-
-        if (health > 0)
-        {
-            mat.color = originColor;
-        }
-        else
-        {
-            //mat.color = Color.gray;
-            //Destroy(gameObject, 4);
-            Destroy(gameObject);
-        }
-
-    }
 }

@@ -47,16 +47,6 @@ public class Bullet : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.tag == "Border")
-        //{
-        //    Destroy(gameObject);
-        //}
-        //if (other.gameObject.tag == "Enemy")
-        //{
-        //    Destroy(gameObject);
-        //    //other.gameObject.GetComponent<HealthPoint>().IsDead();
-        //}
-
         switch (shooter.tag)
         {
             case "Enemy":

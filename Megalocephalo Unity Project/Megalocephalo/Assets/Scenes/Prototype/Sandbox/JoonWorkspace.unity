@@ -2423,7 +2423,7 @@ MonoBehaviour:
   type: 1
   followCam: {fileID: 2070925443600288017}
   fixPosition: {fileID: 2087833771}
-  playerPostion: {fileID: 6074239116719623118}
+  playerPostion: {fileID: 989579273}
   player: {fileID: 0}
   rotationSpeed: 1
   targetRotationY: 0

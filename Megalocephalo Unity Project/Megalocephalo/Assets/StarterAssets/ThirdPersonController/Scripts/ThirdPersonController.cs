@@ -101,8 +101,8 @@ namespace StarterAssets
         public ParticleSystem chargingParticleSystem;
 
         // timeout deltatime
-        private float _jumpTimeoutDelta;
-        private float _fallTimeoutDelta;
+        //private float _jumpTimeoutDelta;
+        //private float _fallTimeoutDelta;
 
         // animation IDs
         private int _animIDSpeed;
@@ -168,8 +168,8 @@ namespace StarterAssets
             AssignAnimationIDs();
 
             // reset our timeouts on start
-            _jumpTimeoutDelta = JumpTimeout;
-            _fallTimeoutDelta = FallTimeout;
+            //_jumpTimeoutDelta = JumpTimeout;
+            //_fallTimeoutDelta = FallTimeout;
         }
 
         private void Update()
@@ -281,8 +281,9 @@ namespace StarterAssets
             {
                 _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg +
                                   _mainCamera.transform.eulerAngles.y;
-   
-                _targetRotation = Mathf.Round(_targetRotation / 90.0f) * 90.0f;
+
+                //_targetRotation = Mathf.Round(_targetRotation / 90.0f) * 90.0f;
+                _targetRotation = Mathf.Round(_targetRotation );
                 //  set _targetRotation to  0~360 degree
                 _targetRotation = _targetRotation % 360;
 
@@ -316,7 +317,7 @@ namespace StarterAssets
             if (Grounded)
             {
                 // reset the fall timeout timer
-                _fallTimeoutDelta = FallTimeout;
+               // _fallTimeoutDelta = FallTimeout;
 
                 // update animator if using character
                 if (_hasAnimator)
@@ -332,7 +333,7 @@ namespace StarterAssets
                 }
 
                 // Jump
-                if (  _input.jump && _jumpTimeoutDelta <= 0.0f)
+                if (  _input.jump /*&& _jumpTimeoutDelta <= 0.0f*/)
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -348,10 +349,10 @@ namespace StarterAssets
                 }
 
                 // jump timeout
-                if (_jumpTimeoutDelta >= 0.0f)
-                {
-                    _jumpTimeoutDelta -= Time.deltaTime;
-                }
+                //if (_jumpTimeoutDelta >= 0.0f)
+                //{
+                //    _jumpTimeoutDelta -= Time.deltaTime;
+                //}
             }
             else
             {
@@ -362,21 +363,21 @@ namespace StarterAssets
                 
                 }
                 // reset the jump timeout timer
-                _jumpTimeoutDelta = JumpTimeout;
+                //_jumpTimeoutDelta = JumpTimeout;
 
-                // fall timeout
-                if (_fallTimeoutDelta >= 0.0f)
-                {
-                    _fallTimeoutDelta -= Time.deltaTime;
-                }
-                else
-                {
-                    // update animator if using character
-                    if (_hasAnimator)
-                    {
-                        _animator.SetBool(_animIDFreeFall, true);
-                    }
-                }
+                //// fall timeout
+                //if (_fallTimeoutDelta >= 0.0f)
+                //{
+                //    _fallTimeoutDelta -= Time.deltaTime;
+                //}
+                //else
+                //{
+                //    // update animator if using character
+                //    if (_hasAnimator)
+                //    {
+                //        _animator.SetBool(_animIDFreeFall, true);
+                //    }
+                //}
 
                 // if we are not grounded, do not jump
                 _input.jump = false;
@@ -443,7 +444,7 @@ namespace StarterAssets
                 if (Physics.BoxCast(transform.position, characterRenderer.bounds.size * 0.5f, Vector3.up, out RaycastHit hitInfo, Quaternion.identity, 1.1f))
                 {
                     _verticalVelocity = 0;
-                    _fallTimeoutDelta = 0;
+                 //   _fallTimeoutDelta = 0;
                 }
             }
         }
@@ -463,16 +464,19 @@ namespace StarterAssets
         private void ChargeAttack()
         {
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // for now, 3x sound to represent charging attack
-            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
-            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
-            for (int i = 0; i < 3; i++)
-            {
-                Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y + ((i - 1) * 2), transform.position.z) + new Vector3(0, 5, 0);
-                GameObject instantBullet = Instantiate(bullet, bulletPos, transform.rotation);
-                Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
-                Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-                bulletRigid.velocity = targetDirection * 80;
-            }
+          //  AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+          // AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y + ((i - 1) * 2), transform.position.z) + new Vector3(0, 5, 0);
+            //    GameObject instantBullet = Instantiate(bullet, bulletPos, transform.rotation);
+            //    Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+            //    Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
+            //    bulletRigid.velocity = targetDirection * 80;
+            //}
+
+
+
         }
 
 

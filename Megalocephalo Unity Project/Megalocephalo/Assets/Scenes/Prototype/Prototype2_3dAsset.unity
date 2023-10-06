@@ -2462,7 +2462,7 @@ MonoBehaviour:
   type: 1
   followCam: {fileID: 2070925443600288017}
   fixPosition: {fileID: 2087833771}
-  playerPostion: {fileID: 6074239116719623118}
+  playerPostion: {fileID: 1139160994}
   player: {fileID: 0}
   rotationSpeed: 1
   targetRotationY: 0
@@ -2689,6 +2689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be66a57e1ae3a34d8a0b03652550514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 10
+  currentHP: 10
 --- !u!1 &2070925443600288017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5818572757268266871, guid: 08cd309f5ea88cc479a523e4cf333664, type: 3}
@@ -2708,7 +2710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1900011674830211986, guid: 08cd309f5ea88cc479a523e4cf333664, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00000333786
+      value: 0.0000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 1900011674830211986, guid: 08cd309f5ea88cc479a523e4cf333664, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2992,7 +2994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8597221329713542332, guid: f15fa0cb8328d484f9103dd51ba1da47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00000333786
+      value: 0.0000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 8597221329713542332, guid: f15fa0cb8328d484f9103dd51ba1da47, type: 3}
       propertyPath: m_LocalPosition.y

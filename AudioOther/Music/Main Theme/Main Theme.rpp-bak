@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "6.81/win64" 1696398278
+<REAPER_PROJECT 0.1 "6.81/win64" 1696401488
   RIPPLE 0
   GROUPOVERRIDE 0 0 0
   AUTOXFADE 129
@@ -14,8 +14,8 @@
   TIMEMODE 1 5 -1 30 0 0 -1
   VIDEO_CONFIG 0 0 256
   PANMODE 3
-  CURSOR 0
-  ZOOM 50.47430263272159 1361 0
+  CURSOR 27.95454545454545
+  ZOOM 50.47430263272159 541 0
   VZOOMEX 1.69642854 0
   USE_REC_CFG 0
   RECMODE 1
@@ -191,7 +191,7 @@
     ISBUS 0 0
     BUSCOMP 0 0 0 0 0
     SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
-    SEL 0
+    SEL 1
     REC 0 5088 1 7 0 0 0 0
     VU 2
     TRACKHEIGHT 0 0 0 0 0 0
@@ -994,28 +994,30 @@
         E 480 80 54 00
         E 0 90 52 7f
         E 240 80 52 00
-        E 0 90 4d 7f
-        E 240 80 4d 00
-        E 0 90 4a 7f
-        E 240 80 4a 00
-        E 0 90 46 7f
-        E 240 80 46 00
-        E 0 90 48 7f
-        E 240 80 48 00
-        E 0 90 4c 7f
-        E 240 80 4c 00
-        E 0 90 4f 7f
-        E 240 80 4f 00
+        e 0 90 4f 7f
+        e 240 80 4f 00
+        e 0 90 4b 7f
+        e 240 80 4b 00
+        e 0 90 49 7f
+        e 240 80 49 00
+        e 0 90 48 7f
+        e 240 80 48 00
+        e 0 90 4c 7f
+        e 240 80 4c 00
+        e 0 90 4f 7f
+        e 240 80 4f 00
         e 0 90 54 7f
         e 240 80 54 00
-        E 2400 b0 7b 00
+        e 0 90 55 7f
+        e 1920 80 55 00
+        E 480 b0 7b 00
         CCINTERP 32
         CHASE_CC_TAKEOFFS 1
         GUID {C3E458E2-57F8-446B-B328-F13AEBD89022}
         IGNTEMPO 0 120 4 4
         SRCCOLOR 224
         VELLANE 128 176 0
-        CFGEDITVIEW -22062.202488 0.015793 39 12 0 -1 0 0 0 0.5
+        CFGEDITVIEW 14480.21953 0.05099 32 14 0 -1 0 0 0 0.5
         KEYSNAP 0
         TRACKSEL 0
         EVTFILTER 0 -1 -1 -1 -1 0 0 0 0 -1 -1 -1 -1 0 -1 0 -1 -1

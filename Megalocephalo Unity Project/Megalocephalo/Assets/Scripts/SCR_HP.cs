@@ -11,10 +11,10 @@ public class HealthPoint : MonoBehaviour
     public HPType maxHP = 10; // should be public?
     public HPType currentHP = 10;
 
-    double maxInvulnerableTimeWhenDamaged = 0.15; // should be public?
+    //double maxInvulnerableTimeWhenDamaged = 0.15; // should be public?
     double currInvulnerableTime;
 
-    double deltaTimeMultiplier = 1.0;
+    //double deltaTimeMultiplier = 1.0;
 
     bool isInvulnerable = false;
 

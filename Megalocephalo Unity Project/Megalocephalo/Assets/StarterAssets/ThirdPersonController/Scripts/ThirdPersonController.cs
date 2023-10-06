@@ -464,8 +464,8 @@ namespace StarterAssets
         private void ChargeAttack()
         {
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // for now, 3x sound to represent charging attack
-          //  AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
-          // AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
             //for (int i = 0; i < 3; i++)
             //{
             //    Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y + ((i - 1) * 2), transform.position.z) + new Vector3(0, 5, 0);

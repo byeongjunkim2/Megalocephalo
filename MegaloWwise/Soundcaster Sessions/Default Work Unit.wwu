@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C405E4A0-3695-4FA3-BF7F-7E6D0D760277}" SchemaVersion="110">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{C405E4A0-3695-4FA3-BF7F-7E6D0D760277}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C405E4A0-3695-4FA3-BF7F-7E6D0D760277}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="PlayerWeaponTest" ID="{8BDB76FD-0F71-4795-B652-73E11878CAE9}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="SFX_playerCharge" ID="{FA7EC9A8-8E8B-424D-8FF5-7607F4A92DE8}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_playerChargeEnd" ID="{D91C6446-4564-46E3-8926-AC2FA8069804}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

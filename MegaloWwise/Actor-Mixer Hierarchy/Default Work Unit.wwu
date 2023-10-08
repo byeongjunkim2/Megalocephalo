@@ -337,6 +337,94 @@
 								</Reference>
 							</ReferenceList>
 						</Sound>
+						<ActorMixer Name="Charge" ID="{BBFB3DA5-6B58-4CE4-B2BE-D660B14C41E5}" ShortID="216314127">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CD730379-8F89-4F79-ABFD-B83E6F4D5905}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC874BC5-797B-4E40-AA5E-D96703C4AAA1}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Charge_Sequence" ID="{EA72754D-BB4D-4408-9A3B-5994AF33798A}" ShortID="779276893">
+									<PropertyList>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="2"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CD730379-8F89-4F79-ABFD-B83E6F4D5905}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC874BC5-797B-4E40-AA5E-D96703C4AAA1}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sfx_player_chargeHead" ID="{37B253C4-D5B1-456D-9F5C-3ACD62D731ED}" ShortID="415506421">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CD730379-8F89-4F79-ABFD-B83E6F4D5905}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC874BC5-797B-4E40-AA5E-D96703C4AAA1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_player_chargeHead" ID="{C43EC9AC-B946-4AD7-A6DD-BE3312332511}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_player_chargeHead.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="628808717"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_player_chargeHead" ID="{C43EC9AC-B946-4AD7-A6DD-BE3312332511}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_player_chargeLoop" ID="{B9EE7DD3-AF1B-475E-A414-D61F6505A2B2}" ShortID="179201844">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CD730379-8F89-4F79-ABFD-B83E6F4D5905}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AC874BC5-797B-4E40-AA5E-D96703C4AAA1}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_player_chargeLoop" ID="{D6B60189-2F64-4308-A936-0EC6C7E90E1F}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="301.785"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.170968783710895"/>
+														<Property Name="LoopEnd" Type="Real64" Value="0.9255"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>sfx_player_chargeLoop.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="76129335"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_player_chargeLoop" ID="{D6B60189-2F64-4308-A936-0EC6C7E90E1F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="sfx_player_chargeHead" ID="{37B253C4-D5B1-456D-9F5C-3ACD62D731ED}"/>
+										<ItemRef Name="sfx_player_chargeLoop" ID="{B9EE7DD3-AF1B-475E-A414-D61F6505A2B2}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Enemy" ID="{D271EA9E-8917-4AB4-83D0-F8BB967F3E4F}" ShortID="177559854">

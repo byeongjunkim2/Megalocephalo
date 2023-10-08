@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A2E4F01D-CA14-EA17-00D2-9A520EA17C43}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,8 +19,30 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="393239870" Name="SFX"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="348963605" Name="Reverb"/>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="151362964" Name="playerHealth"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3367563548" Name="Game_Paused">
+					<States>
+						<State Id="319258907" Name="Paused"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1365518790" Name="Unpaused"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="1690668539" Name="Music_States">
+					<Switches/>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="1831431028" Type="User" Language="SFX" Hash="{91C96B07-9CD2-8791-6A96-A487B2B3C49E}">
 			<ShortName>TestSoundbank</ShortName>
@@ -48,7 +70,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{B77EB904-B982-16A4-7C30-E2F41F7F9D91}">
+		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{C20DC6CF-A594-9891-386C-87DA0D19BAE2}">
 			<ShortName>MainBank</ShortName>
 			<Path>MainBank.bnk</Path>
 			<Media>
@@ -67,6 +89,10 @@
 				<File Id="69446317" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_bubble_02.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_bubble_02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="76129335" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_player_chargeLoop.wav</ShortName>
+					<CachePath>SFX/sfx_player_chargeLoop_66AEB305.wem</CachePath>
 				</File>
 				<File Id="126872802" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MusicDemo2.wav</ShortName>
@@ -88,12 +114,23 @@
 					<ShortName>sfx_player_rangedWeapon_laser_01.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_laser_01_10C4C929.wem</CachePath>
 				</File>
+				<File Id="628808717" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_player_chargeHead.wav</ShortName>
+					<CachePath>SFX/sfx_player_chargeHead_10C4C929.wem</CachePath>
+				</File>
 				<File Id="702952511" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_bubble_00.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_bubble_00_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
+				<Event Id="2870271946" Name="SFX_playerCharge" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="76129335"/>
+						<MediaRef Id="628808717"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1847534809" Name="SFX_playerChargeEnd" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1882098847" Name="SFX_playerShoot" DurationType="OneShot" DurationMin="0.40470833" DurationMax="0.4795">
 					<MediaRefs>
 						<MediaRef Id="12839961"/>
@@ -120,5 +157,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4E3EA1A9-35E8-8380-B51B-AA1F295EC1EC}</FileHash>
+	<FileHash>{541665A2-6A03-F455-65AD-C03EEE9E8C44}</FileHash>
 </SoundBanksInfo>

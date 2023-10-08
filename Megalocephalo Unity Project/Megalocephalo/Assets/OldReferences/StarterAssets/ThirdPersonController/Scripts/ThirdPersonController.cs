@@ -101,6 +101,7 @@ namespace StarterAssets
         // player special movement
         private float chargedTime;
         private float maxChargeTime = 0.7f;
+        private bool isCharging = false;  // Boolean to check whether the charge sequence has already started
 
         // effect related
         public ParticleSystem chargingParticleSystem;
@@ -202,7 +203,14 @@ namespace StarterAssets
             if (Input.GetKey(attackKeyCode))
             {
                 chargedTime += Time.deltaTime;
+                
+                if (!isCharging)
+                {
+                    AkSoundEngine.PostEvent("SFX_playerCharge", gameObject);
+                    isCharging = true;
+                }
             }
+            
             if (chargedTime > maxChargeTime)
             {
                 Debug.Log("Charging!!\n");
@@ -212,6 +220,14 @@ namespace StarterAssets
                     ChargeAttack();
                     chargedTime = 0;
                     chargingParticleSystem.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyUp(attackKeyCode))
+                {
+                    AkSoundEngine.PostEvent("SFX_playerChargeEnd", gameObject); // Stop charging loop sfx
+                    isCharging = false;
                 }
             }
 
@@ -477,7 +493,8 @@ namespace StarterAssets
 
         private void ChargeAttack()
         {
-            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // for now, 3x sound to represent charging attack
+            AkSoundEngine.PostEvent("SFX_playerChargeEnd", gameObject); // Stop charging loop sfx
+            isCharging = false;                                         // reset isCharging boolean
 
             //AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
             //AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
@@ -491,7 +508,7 @@ namespace StarterAssets
             //}
 
             //GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
-           // instantBullet.GetComponent<Bullet>().SetBullet(this.gameObject , Bullet.BulletType.tempTentacle);
+            // instantBullet.GetComponent<Bullet>().SetBullet(this.gameObject , Bullet.BulletType.tempTentacle);
             isUsingTentacle = true;
             StartCoroutine(TempTentacleAttack());//change it later
 

@@ -70,6 +70,32 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="SFX_playerCharge" ID="{FA7EC9A8-8E8B-424D-8FF5-7607F4A92DE8}">
+											<ChildrenList>
+												<Action Name="" ID="{7836E118-A953-4734-ACDB-286C2EF574DB}" ShortID="361028009">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Charge_Sequence" ID="{EA72754D-BB4D-4408-9A3B-5994AF33798A}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="SFX_playerChargeEnd" ID="{D91C6446-4564-46E3-8926-AC2FA8069804}">
+											<ChildrenList>
+												<Action Name="" ID="{BD7053B7-D519-45B7-A9E1-81BA767DD18F}" ShortID="626191325">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.05"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Charge_Sequence" ID="{EA72754D-BB4D-4408-9A3B-5994AF33798A}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>

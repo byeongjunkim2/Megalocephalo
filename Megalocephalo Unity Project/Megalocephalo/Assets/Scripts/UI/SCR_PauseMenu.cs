@@ -63,7 +63,7 @@ public class PauseMenu : MonoBehaviour
     {
         AkSoundEngine.PostEvent("StopAll", gameObject); // Stop all audio upon returning to Main Menu
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Mainmenu");
+        SceneManager.LoadScene("SCENE_MainMenu");
     }
 
     public void OnClickExit()

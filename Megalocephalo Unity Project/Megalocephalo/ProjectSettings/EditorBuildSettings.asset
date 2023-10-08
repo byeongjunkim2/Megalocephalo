@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Mainmenu/Mainmenu.unity
+    path: Assets/Scenes/Menu_Scenes/SCENE_MainMenu.unity
     guid: 1ab0c2b277ee71145b8c6205a5335b1d
   - enabled: 1
-    path: Assets/Scenes/AudioZoo/PrototypeAudioZoo.unity
+    path: Assets/Scenes/AudioZoo/SCENE_AudioZoo.unity
     guid: 0668bbfe042acdb4bbe5877aee5c7ace
   - enabled: 1
-    path: Assets/Scenes/Prototype/Prototype2_3dAsset.unity
+    path: Assets/Scenes/Level_Scenes/SCENE_Lv_A.unity
     guid: 3893a67fe0a72824088add1422095ffe
   - enabled: 0
-    path: Assets/Scenes/Prototype/Prototype.unity
+    path: Assets/Scenes/Test_Scenes/Prototype.unity
     guid: 5612029b5de4cc7479b98759cbbee919
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

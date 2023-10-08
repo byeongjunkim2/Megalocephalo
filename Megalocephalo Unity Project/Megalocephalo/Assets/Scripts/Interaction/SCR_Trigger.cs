@@ -47,7 +47,8 @@ public class Trigger : MonoBehaviour
         {
             case TriggerType.CamRotation:
                 //player.GetComponent<ThirdPersonController>().AdjustPosition(transform.position);
-                player.transform.position = transform.position;
+                player.transform.position = new Vector3( transform.position.x, player.transform.position.y, transform.position.z) ;
+     
                 RotateCamera();
                 //Vector3 newPos = transform.position;
                 //player.transform.position.x = transform.position.x;

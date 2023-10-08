@@ -26,5 +26,12 @@ public class SCR_SceneManager : MonoBehaviour
                 Debug.Log("Over -50");
             }
         }
+
+        if(character.gameObject.GetComponent<HealthPoint>().IsDead() ) 
+        {
+            deadSceneCanvasUI.gameObject.SetActive(true);
+            Debug.Log("player destroyed");
+        }
+
     }
 }

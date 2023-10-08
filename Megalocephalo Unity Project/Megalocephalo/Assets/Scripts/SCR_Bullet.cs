@@ -81,6 +81,7 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Player")
         {
             //change hp class function. check obj is dead in that class.
+            //Debug.Log("collide?");
             other.GetComponent<HealthPoint>().GiveDamage(damage);
             Destroy(gameObject);
         }

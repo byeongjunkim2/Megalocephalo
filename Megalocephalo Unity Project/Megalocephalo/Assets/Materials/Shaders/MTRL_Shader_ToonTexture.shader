@@ -1,13 +1,13 @@
-Shader "Unlit/ToonShader"
+Shader "Unlit/ToonTextureShader"
 {
     Properties
     {
-        _ColorA("Color A", Color) = (1, 1, 1, 1)
-        _ColorB("Color B", Color) = (1, 1, 1, 1)
+        _MainTex ("Texture", 2D) = "WHITE"{}
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Transparent" }
+        Blend SrcAlpha OneMinusSrcAlpha
         LOD 100
 
         Pass
@@ -35,6 +35,7 @@ Shader "Unlit/ToonShader"
                 half3 normal : NORMAL;
             };
 
+            sampler2D _MainTex;
             float4 _MainTex_ST;
             fixed4 _ColorA, _ColorB;
 
@@ -61,8 +62,9 @@ Shader "Unlit/ToonShader"
             {
                 // sample the texture
                 float dot = min(1.0, max(0.0 , (i.normal.y + 1)/2.0)+sign(max(0.0 , i.normal.y))/2.0);
-                fixed4 color = _ColorA*(dot) + _ColorB*(1.0 - dot);
-                return color;
+                fixed4 tex = tex2D(_MainTex, i.uv);
+                tex.rgb *= dot;
+                return tex;
             }
             ENDCG
         }

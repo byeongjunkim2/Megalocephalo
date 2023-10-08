@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         mat = GetComponent<MeshRenderer>().material;
         cam = UnityEngine.Camera.main;
-        originColor =mat.color;
+        originColor = mat.color;
         Player = FindObjectOfType<SCR_playerMovement>().gameObject;
 
     }

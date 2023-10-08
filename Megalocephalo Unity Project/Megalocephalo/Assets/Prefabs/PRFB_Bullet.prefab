@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7
+  shooter: {fileID: 0}
+  type: 0
 --- !u!54 &3097264479100537728
 Rigidbody:
   m_ObjectHideFlags: 0

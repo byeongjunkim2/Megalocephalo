@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -77,8 +78,12 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+        //bullet
         public GameObject bullet;
         private KeyCode attackKeyCode = KeyCode.X;
+
+        //Temp Tentacle
+        public GameObject tempTentalce;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -135,7 +140,11 @@ namespace StarterAssets
             }
         }
 
+        //``````````````````````
 
+        bool isUsingTentacle = false;
+
+        //``````````````````````
         private void Awake()
         {
             // get a reference to our main camera
@@ -178,8 +187,11 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
-            Move();
-
+            
+         //   if (!isUsingTentacle) { 
+                Move();
+          //  }
+            
             if (Input.GetKeyDown(attackKeyCode))
             {
                 NormalAttack();
@@ -456,16 +468,19 @@ namespace StarterAssets
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
             GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
             instantBullet.GetComponent<Bullet>().SetBullet(this.gameObject , Bullet.BulletType.bullet);
+            //````````````put these in the set bullet function``````````
             Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
             bulletRigid.velocity = targetDirection * 80;
+            //``````````````````````````````````````````````````````````
         }
 
         private void ChargeAttack()
         {
             AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // for now, 3x sound to represent charging attack
-            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
-            AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+
+            //AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
+            //AkSoundEngine.PostEvent("SFX_playerShoot", gameObject);
             //for (int i = 0; i < 3; i++)
             //{
             //    Vector3 bulletPos = new Vector3(transform.position.x, transform.position.y + ((i - 1) * 2), transform.position.z) + new Vector3(0, 5, 0);
@@ -475,10 +490,23 @@ namespace StarterAssets
             //    bulletRigid.velocity = targetDirection * 80;
             //}
 
-
+            //GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
+           // instantBullet.GetComponent<Bullet>().SetBullet(this.gameObject , Bullet.BulletType.tempTentacle);
+            isUsingTentacle = true;
+            StartCoroutine(TempTentacleAttack());//change it later
 
         }
 
+        IEnumerator TempTentacleAttack()
+        {
+
+            tempTentalce.SetActive(true);
+
+            yield return new WaitForSeconds(0.25f);
+            tempTentalce.SetActive(false);
+            isUsingTentacle = false;
+        }
+        
 
         public void AdjustPosition(Vector3 newPos)
         {
@@ -487,21 +515,5 @@ namespace StarterAssets
 
         }
 
-
-        //private void asdasdsa()
-        //{
-        //    if (Input.GetKeyDown(attackKeyCode))
-        //    {
-
-        //        AkSoundEngine.PostEvent("SFX_playerShoot", gameObject); // Play weapon sfx here
-        //        GameObject instantBullet = Instantiate(bullet, transform.position + new Vector3(0, 5, 0), transform.rotation);
-        //        Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
-
-        //        Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-        //        bulletRigid.velocity = targetDirection * 80;
-        //        // bulletRigid.velocity = transform.right * 80;
-        //        // transform.right
-        //    }
-        //}
     }
 }

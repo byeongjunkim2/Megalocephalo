@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public int damage;
     public GameObject shooter;
      TrailRenderer trailRenderer;
-    public enum BulletType { bullet,}    
+    public enum BulletType { bullet,tempTentacle }   //change it later 
     public BulletType type;
 
     public void SetBullet(GameObject shooterObj, BulletType bulletType)
@@ -70,7 +70,9 @@ public class Bullet : MonoBehaviour
         {
             //change hp class function. check obj is dead in that class.
             other.GetComponent<HealthPoint>().GiveDamage(damage);
-            Destroy(gameObject);
+
+            if(type != BulletType.tempTentacle) //change it later
+                Destroy(gameObject);
         }
     }
 

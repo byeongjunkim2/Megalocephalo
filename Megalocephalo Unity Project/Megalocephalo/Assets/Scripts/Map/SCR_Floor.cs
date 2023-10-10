@@ -55,4 +55,22 @@ public class SCR_Floor : MonoBehaviour
         }
 
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {     
+        if(other.tag == "Player" || other.tag =="Enemy")
+        {
+            other.transform.SetParent(transform);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" || other.tag == "Enemy")
+        {
+            other.transform.SetParent(null);
+        }
+    }
+
 }

@@ -19,6 +19,8 @@
 						<ObjectRef Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_menuCancel" ID="{B252086C-98A3-4281-9315-BC71122F2375}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_playerChargeEnd" ID="{D91C6446-4564-46E3-8926-AC2FA8069804}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="UTL_setStateUnpaused" ID="{576C0884-69CF-4A1B-8D69-1EEEC328388B}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="UTL_setStatePaused" ID="{B29F492C-70A2-4A6D-A93E-1EC86FE056CA}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_menuSelect" ID="{58E4AC57-4393-4AD6-BD45-44C0D7A6466F}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_playerShoot" ID="{835282D9-4EC5-4BD9-99A2-5CEB899015CB}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="SFX_menuConfirm" ID="{8874EB47-527D-4CC9-A8FE-699FAD2CF8F4}" WorkUnitID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" Origin="Manual" Filter="7"/>

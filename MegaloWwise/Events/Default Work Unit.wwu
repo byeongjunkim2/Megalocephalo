@@ -169,6 +169,42 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="States" ID="{F1C4A25C-7020-4928-BB8D-A8FD03BDB038}" ShortID="809883803">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="9"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Event Name="UTL_setStatePaused" ID="{B29F492C-70A2-4A6D-A93E-1EC86FE056CA}">
+							<ChildrenList>
+								<Action Name="" ID="{C3C1A68A-5430-4F72-86F3-2FF489A60BC8}" ShortID="324252473">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Paused" ID="{CE50545E-7976-4669-8FE1-8E8C76D4409D}" WorkUnitID="{F35D41C6-A457-4302-BADC-F7CD43F0EF18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="UTL_setStateUnpaused" ID="{576C0884-69CF-4A1B-8D69-1EEEC328388B}">
+							<ChildrenList>
+								<Action Name="" ID="{BAF26D7B-53AE-4A36-9EDC-60E694CC9F78}" ShortID="157098595">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Unpaused" ID="{47F3DDD8-E8BD-46A1-B5AB-E156997760EC}" WorkUnitID="{F35D41C6-A457-4302-BADC-F7CD43F0EF18}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

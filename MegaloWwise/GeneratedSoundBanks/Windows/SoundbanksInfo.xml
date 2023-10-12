@@ -70,7 +70,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{C20DC6CF-A594-9891-386C-87DA0D19BAE2}">
+		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{3F0D88ED-77C8-59CA-9504-EA26CD43E950}">
 			<ShortName>MainBank</ShortName>
 			<Path>MainBank.bnk</Path>
 			<Media>
@@ -92,7 +92,7 @@
 				</File>
 				<File Id="76129335" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_chargeLoop.wav</ShortName>
-					<CachePath>SFX/sfx_player_chargeLoop_66AEB305.wem</CachePath>
+					<CachePath>SFX/sfx_player_chargeLoop_E76865FC.wem</CachePath>
 				</File>
 				<File Id="126872802" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MusicDemo2.wav</ShortName>
@@ -114,6 +114,10 @@
 					<ShortName>sfx_player_rangedWeapon_laser_01.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_laser_01_10C4C929.wem</CachePath>
 				</File>
+				<File Id="495839321" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_UI_menu_cancel.wav</ShortName>
+					<CachePath>SFX/sfx_UI_menu_cancel_10C4C929.wem</CachePath>
+				</File>
 				<File Id="628808717" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_chargeHead.wav</ShortName>
 					<CachePath>SFX/sfx_player_chargeHead_10C4C929.wem</CachePath>
@@ -122,8 +126,31 @@
 					<ShortName>sfx_player_rangedWeapon_bubble_00.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_bubble_00_10C4C929.wem</CachePath>
 				</File>
+				<File Id="746209503" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_UI_menu_confirm.wav</ShortName>
+					<CachePath>SFX/sfx_UI_menu_confirm_10C4C929.wem</CachePath>
+				</File>
+				<File Id="776192565" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_UI_menu_select01.wav</ShortName>
+					<CachePath>SFX/sfx_UI_menu_select01_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="1288124910" Name="SFX_menuCancel" DurationType="OneShot" DurationMin="0.4915" DurationMax="0.4915">
+					<MediaRefs>
+						<MediaRef Id="495839321"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="54691296" Name="SFX_menuConfirm" DurationType="OneShot" DurationMin="0.44279167" DurationMax="0.44279167">
+					<MediaRefs>
+						<MediaRef Id="746209503"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="76764264" Name="SFX_menuSelect" DurationType="OneShot" DurationMin="0.43752083" DurationMax="0.43752083">
+					<MediaRefs>
+						<MediaRef Id="776192565"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2870271946" Name="SFX_playerCharge" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="76129335"/>
@@ -154,8 +181,27 @@
 						<MediaRef Id="66690859"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2434673480" Name="UTL_setStatePaused" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3367563548" Id="319258907" Name="Paused"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="924590925" Name="UTL_setStateUnpaused" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3367563548" Id="1365518790" Name="Unpaused"/>
+					</ActionSetState>
+				</Event>
 			</Events>
+			<StateGroups>
+				<StateGroup Id="3367563548" Name="Game_Paused">
+					<States>
+						<State Id="319258907" Name="Paused"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1365518790" Name="Unpaused"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{541665A2-6A03-F455-65AD-C03EEE9E8C44}</FileHash>
+	<FileHash>{542A8A9E-B2C2-6519-91EB-2C1A7BB80B2E}</FileHash>
 </SoundBanksInfo>

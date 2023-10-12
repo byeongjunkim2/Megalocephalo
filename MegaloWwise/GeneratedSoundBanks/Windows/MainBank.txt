@@ -1,8 +1,13 @@
 Event	ID	Name			Wwise Object Path	Notes
+	54691296	SFX_menuConfirm			\Default Work Unit\SFX\UI\SFX_menuConfirm	
+	76764264	SFX_menuSelect			\Default Work Unit\SFX\UI\SFX_menuSelect	
+	924590925	UTL_setStateUnpaused			\Default Work Unit\States\UTL_setStateUnpaused	
+	1288124910	SFX_menuCancel			\Default Work Unit\SFX\UI\SFX_menuCancel	
 	1324413170	TestMusic			\Default Work Unit\Test\TestMusic	
 	1650626098	TestSFX			\Default Work Unit\Test\TestSFX	
 	1847534809	SFX_playerChargeEnd			\Default Work Unit\SFX\Player\Combat\SFX_playerChargeEnd	
 	1882098847	SFX_playerShoot			\Default Work Unit\SFX\Player\Combat\SFX_playerShoot	
+	2434673480	UTL_setStatePaused			\Default Work Unit\States\UTL_setStatePaused	
 	2870271946	SFX_playerCharge			\Default Work Unit\SFX\Player\Combat\SFX_playerCharge	
 	3086540886	StopAll			\Default Work Unit\Debug\StopAll	
 
@@ -11,12 +16,15 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	26151068	sfx_player_rangedWeapon_bubble_01	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_bubble_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Bubble\sfx_player_rangedWeapon_bubble_01		23400
 	66690859	Test_Boing	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\Test_Boing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test_Boing		127392
 	69446317	sfx_player_rangedWeapon_bubble_02	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_bubble_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Bubble\sfx_player_rangedWeapon_bubble_02		31324
-	76129335	sfx_player_chargeLoop	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_chargeLoop_66AEB305.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Charge\Charge_Sequence\sfx_player_chargeLoop		123842
+	76129335	sfx_player_chargeLoop	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_chargeLoop_E76865FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Charge\Charge_Sequence\sfx_player_chargeLoop		123842
 	126872802	MusicDemo	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\MusicDemo2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_Test\Music_Test\MusicDemo		11048324
 	167822009	sfx_player_rangedWeapon_bubble_03	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_bubble_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Bubble\sfx_player_rangedWeapon_bubble_03		13952
 	257601877	sfx_player_rangedWeapon_laser_02	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_laser_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Laser\sfx_player_rangedWeapon_laser_02		44324
 	312519200	sfx_player_rangedWeapon_laser_03	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_laser_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Laser\sfx_player_rangedWeapon_laser_03		46128
 	461077377	sfx_player_rangedWeapon_laser_01	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_laser_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Laser\sfx_player_rangedWeapon_laser_01		38948
+	495839321	sfx_UI_menu_cancel	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_UI_menu_cancel_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\sfx_UI_menu_cancel		47280
 	628808717	sfx_player_chargeHead	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_chargeHead_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Charge\Charge_Sequence\sfx_player_chargeHead		71976
 	702952511	sfx_player_rangedWeapon_bubble_00	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_bubble_00_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Bubble\sfx_player_rangedWeapon_bubble_00		44066
+	746209503	sfx_UI_menu_confirm	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_UI_menu_confirm_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\sfx_UI_menu_confirm		42604
+	776192565	sfx_UI_menu_select01	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_UI_menu_select01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\sfx_UI_menu_select01		42098
 

@@ -4,6 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{E0BF04B9-FE0E-4357-A57A-D81C59176064}" PersistMode="Standalone">
 			<ChildrenList>
 				<Folder Name="Test" ID="{9EC37465-6EE4-4250-90B0-1E0AA599FC94}" ShortID="889881718">
+					<PropertyList>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Event Name="TestSFX" ID="{90810189-3B49-427C-B8E1-F769690D1DA4}">
 							<ChildrenList>
@@ -30,6 +33,10 @@
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Debug" ID="{3ED6C791-8A9D-4382-9858-F11560F72380}" ShortID="1059427573">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="27"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Event Name="StopAll" ID="{06261D82-705C-412A-B314-E7BE5EEC5B50}">
 							<ChildrenList>
@@ -44,10 +51,23 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Music" ID="{E1C160E0-5802-4481-BFC7-FE193D6478DC}" ShortID="96352945"/>
+				<Folder Name="Music" ID="{E1C160E0-5802-4481-BFC7-FE193D6478DC}" ShortID="96352945">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+				</Folder>
 				<Folder Name="SFX" ID="{5D210FD4-DD5F-40FD-89C0-3C7305607BB4}" ShortID="84160239">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="16"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
 						<Folder Name="Player" ID="{6D03158D-155A-412F-B22D-FC048F4BFE2B}" ShortID="378678517">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="21"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ChildrenList>
 								<Folder Name="Movement" ID="{081325C1-CD72-41F3-9019-14229F7408CF}" ShortID="457835543"/>
 								<Folder Name="Combat" ID="{2D19F2A8-54BA-44DC-B63F-851DE2897855}" ShortID="44767546">
@@ -100,7 +120,53 @@
 								</Folder>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="Enemy" ID="{CB774D58-9761-47AA-B73F-6C978E83774C}" ShortID="1068192636"/>
+						<Folder Name="Enemy" ID="{CB774D58-9761-47AA-B73F-6C978E83774C}" ShortID="1068192636">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</Folder>
+						<Folder Name="UI" ID="{325C0161-EF9B-45D3-9E96-C426BE575CF8}" ShortID="741493413">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<Event Name="SFX_menuConfirm" ID="{8874EB47-527D-4CC9-A8FE-699FAD2CF8F4}">
+									<ChildrenList>
+										<Action Name="" ID="{3DEE98C3-DDAB-4E30-BD06-DB346509420C}" ShortID="671190355">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_UI_menu_confirm" ID="{564A8C9B-648F-40E4-9F0E-BA29CDDAA233}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SFX_menuCancel" ID="{B252086C-98A3-4281-9315-BC71122F2375}">
+									<ChildrenList>
+										<Action Name="" ID="{9DEF6209-268B-439F-B788-6D5F52275CBE}" ShortID="506523858">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_UI_menu_cancel" ID="{A7F3348D-5BF6-4EAA-8829-BA9C362E9E07}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SFX_menuSelect" ID="{58E4AC57-4393-4AD6-BD45-44C0D7A6466F}">
+									<ChildrenList>
+										<Action Name="" ID="{4B2F6DD2-3B7D-4823-9D63-F0C2ECE35FBD}" ShortID="793927584">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sfx_UI_menu_select01" ID="{CD0DAB0E-7961-4321-94DF-9C47E70D0C73}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

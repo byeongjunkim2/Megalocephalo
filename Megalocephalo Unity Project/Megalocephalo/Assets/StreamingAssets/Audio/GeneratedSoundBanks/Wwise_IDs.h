@@ -13,12 +13,17 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID SFX_MENUCANCEL = 1288124910U;
+        static const AkUniqueID SFX_MENUCONFIRM = 54691296U;
+        static const AkUniqueID SFX_MENUSELECT = 76764264U;
         static const AkUniqueID SFX_PLAYERCHARGE = 2870271946U;
         static const AkUniqueID SFX_PLAYERCHARGEEND = 1847534809U;
         static const AkUniqueID SFX_PLAYERSHOOT = 1882098847U;
         static const AkUniqueID STOPALL = 3086540886U;
         static const AkUniqueID TESTMUSIC = 1324413170U;
         static const AkUniqueID TESTSFX = 1650626098U;
+        static const AkUniqueID UTL_SETSTATEPAUSED = 2434673480U;
+        static const AkUniqueID UTL_SETSTATEUNPAUSED = 924590925U;
     } // namespace EVENTS
 
     namespace STATES

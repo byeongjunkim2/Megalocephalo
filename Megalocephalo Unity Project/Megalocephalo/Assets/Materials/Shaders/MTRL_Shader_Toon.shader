@@ -60,7 +60,7 @@ Shader "Unlit/ToonShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                float dot = min(1.0, max(0.0 , (i.normal.y + 1)/2.0)+sign(max(0.0 , i.normal.y))/2.0);
+                float dot = clamp(i.normal.y, 0.0f, 1.0f)/2.0 + clamp(sign(i.normal.y), 0.0f, 1.0f)/2.0;
                 fixed4 color = _ColorA*(dot) + _ColorB*(1.0 - dot);
                 return color;
             }

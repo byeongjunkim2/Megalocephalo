@@ -29,7 +29,8 @@ public class Enemy : MonoBehaviour
         hp = GetComponent<HealthPoint>();
         //  rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-        mat = GetComponent<MeshRenderer>().material;
+        //mat = GetComponent<MeshRenderer>().material;
+        mat = GetComponentInChildren<MeshRenderer>().material;
         cam = UnityEngine.Camera.main;
         originColor = mat.color;
         Player = FindObjectOfType<SCR_playerMovement>().gameObject;

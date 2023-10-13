@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
     public GameObject Player;
     HealthPoint hp;
-
+    private bool isOnSameAxis;
     private void Awake()
     {
         hp = GetComponent<HealthPoint>();
@@ -34,12 +35,20 @@ public class Enemy : MonoBehaviour
         cam = UnityEngine.Camera.main;
         originColor = mat.color;
         Player = FindObjectOfType<SCR_playerMovement>().gameObject;
-
+        isOnSameAxis = false;
     }
 
     private void Update()
     {
-       
+        if (IsOnSameLineWithPlayer())
+        {
+            isOnSameAxis = true;
+        }
+        else
+        {
+            isOnSameAxis = false;
+        }
+
         Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
         if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
         {
@@ -49,7 +58,7 @@ public class Enemy : MonoBehaviour
         }
         else { inCamera = false; shoottimer = 1.3f; }
 
-        if (inCamera&& shoottimer<0.0f && CanShoot)
+        if (inCamera && shoottimer < 0.0f && CanShoot && isOnSameAxis)
         {
             Rotate();
             Shoot();
@@ -104,4 +113,14 @@ public class Enemy : MonoBehaviour
         
     }
    
+    private bool IsOnSameLineWithPlayer()
+    {
+        Vector3 dir =  cam.transform.localRotation * Vector3.forward;
+        Vector3 linear = (transform.position - Player.transform.position);
+        if(Vector3.Dot(dir,linear) <= 0.2)
+        {
+            return true;
+        }
+        return false;
+    }
 }

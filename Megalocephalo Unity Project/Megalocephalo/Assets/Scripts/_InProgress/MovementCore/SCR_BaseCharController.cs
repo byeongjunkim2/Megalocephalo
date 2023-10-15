@@ -29,6 +29,8 @@ namespace KinematicCharacterController
         public bool CrouchUp;
 
         public bool AttackDown;
+        public bool AttackUp;
+        public bool AttackPressed;
     }
 
     public struct AICharacterInputs
@@ -57,14 +59,14 @@ namespace KinematicCharacterController
         [Header("Air Movement")]
         public float MaxAirMoveSpeed = 15f;
         public float AirAccelerationSpeed = 15f;
-        public float Drag = 0.1f;
+        public float Drag = 0.0f;
 
         [Header("Jumping")]
         public bool AllowJumpingWhenSliding = false;
         public float JumpUpSpeed = 35f;
         public float JumpScalableForwardSpeed = 10f;
         public float JumpPreGroundingGraceTime = 0f;
-        public float JumpPostGroundingGraceTime = 0f;
+        public float JumpPostGroundingGraceTime = 0.1f;
 
         [Header("Misc")]
         public List<Collider> IgnoredColliders = new List<Collider>();

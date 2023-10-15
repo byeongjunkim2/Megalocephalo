@@ -70,7 +70,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{C147A36E-1E46-BC9D-0E90-42A46F469065}">
+		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{A116C0DC-6D38-23F7-79D7-DAA3F9FD3F55}">
 			<ShortName>MainBank</ShortName>
 			<Path>MainBank.bnk</Path>
 			<Media>
@@ -93,6 +93,10 @@
 				<File Id="76129335" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_chargeLoop.wav</ShortName>
 					<CachePath>SFX/sfx_player_chargeLoop_E76865FC.wem</CachePath>
+				</File>
+				<File Id="126266664" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_player_tentacle_swing_01.wav</ShortName>
+					<CachePath>SFX/sfx_player_tentacle_swing_01_10C4C929.wem</CachePath>
 				</File>
 				<File Id="126872802" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MusicDemo2.wav</ShortName>
@@ -196,6 +200,11 @@
 						<MediaRef Id="702952511"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3075318534" Name="SFX_playerTentacleSwing" DurationType="OneShot" DurationMin="0.326875" DurationMax="0.326875">
+					<MediaRefs>
+						<MediaRef Id="126266664"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3086540886" Name="StopAll" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1324413170" Name="TestMusic" DurationType="Infinite">
 					<MediaRefs>
@@ -229,5 +238,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{88534127-1986-A179-7642-FF1C7D62EC95}</FileHash>
+	<FileHash>{9BA03AD8-F360-AD09-E726-2D8A48FE4D87}</FileHash>
 </SoundBanksInfo>

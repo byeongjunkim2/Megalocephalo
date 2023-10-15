@@ -518,6 +518,7 @@ namespace StarterAssets
         {
 
             tempTentalce.SetActive(true);
+            AkSoundEngine.PostEvent("SFX_playerTentacleSwing", gameObject); // Play SFX for tentacle
 
             yield return new WaitForSeconds(0.25f);
             tempTentalce.SetActive(false);

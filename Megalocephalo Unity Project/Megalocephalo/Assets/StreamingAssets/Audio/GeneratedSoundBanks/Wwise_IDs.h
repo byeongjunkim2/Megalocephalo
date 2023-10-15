@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID SFX_PLAYERCHARGE = 2870271946U;
         static const AkUniqueID SFX_PLAYERCHARGEEND = 1847534809U;
         static const AkUniqueID SFX_PLAYERSHOOT = 1882098847U;
+        static const AkUniqueID SFX_PLAYERTENTACLESWING = 3075318534U;
         static const AkUniqueID STOPALL = 3086540886U;
         static const AkUniqueID TESTMUSIC = 1324413170U;
         static const AkUniqueID TESTSFX = 1650626098U;

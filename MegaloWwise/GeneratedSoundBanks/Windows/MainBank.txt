@@ -11,6 +11,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1901650632	SFX_enemy_takeDamage			\Default Work Unit\SFX\Enemy\Health\SFX_enemy_takeDamage	
 	2434673480	UTL_setStatePaused			\Default Work Unit\States\UTL_setStatePaused	
 	2870271946	SFX_playerCharge			\Default Work Unit\SFX\Player\Combat\SFX_playerCharge	
+	3075318534	SFX_playerTentacleSwing			\Default Work Unit\SFX\Player\Tentacle\SFX_playerTentacleSwing	
 	3086540886	StopAll			\Default Work Unit\Debug\StopAll	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -19,6 +20,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	66690859	Test_Boing	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\Test_Boing_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test_Boing		127392
 	69446317	Bubble_02	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_bubble_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Bubble\Bubble_02		31324
 	76129335	sfx_player_chargeLoop	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_chargeLoop_E76865FC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Charge\Charge_Sequence\sfx_player_chargeLoop		123842
+	126266664	Swing_01	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_tentacle_swing_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Tentacle\Swing_01		31476
 	126872802	MusicDemo	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\MusicDemo2_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_Test\Music_Test\MusicDemo		11048324
 	167822009	Bubble_03	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_rangedWeapon_bubble_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Shoot\Bubble\Bubble_03		13952
 	228475610	TakeDamage_03	C:\Users\Jrlar\OneDrive\Documents\Digipen\GAM300_SVN\trunk\MegaloWwise\.cache\Windows\SFX\sfx_player_takeDamage_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Damage\Take_Damage\TakeDamage_03		62470

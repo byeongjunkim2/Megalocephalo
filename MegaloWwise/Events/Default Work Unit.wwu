@@ -133,6 +133,21 @@
 										</Event>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="Tentacle" ID="{7661543A-3551-47B7-9DFC-A69DF7E535A1}" ShortID="171794092">
+									<ChildrenList>
+										<Event Name="SFX_playerTentacleSwing" ID="{FC8A3768-9D64-4DB2-8630-654B2EF7FF98}">
+											<ChildrenList>
+												<Action Name="" ID="{DE429C83-DF1F-4FD2-A896-173FE9C12E7B}" ShortID="830024056">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Swing_01" ID="{9F701ABF-9697-455F-9EB2-A784F2C5BF06}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Enemy" ID="{CB774D58-9761-47AA-B73F-6C978E83774C}" ShortID="1068192636">

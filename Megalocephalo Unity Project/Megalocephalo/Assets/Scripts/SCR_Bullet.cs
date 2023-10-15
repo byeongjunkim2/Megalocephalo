@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AK.Wwise;
 
 public class Bullet : MonoBehaviour
 {
@@ -69,6 +70,8 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             //change hp class function. check obj is dead in that class.
+
+            AkSoundEngine.PostEvent("SFX_player_takeDamage", gameObject);  // Play enemy damage SFX
             other.GetComponent<HealthPoint>().GiveDamage(damage);
 
             if(type != BulletType.tempTentacle) //change it later
@@ -82,6 +85,7 @@ public class Bullet : MonoBehaviour
         {
             //change hp class function. check obj is dead in that class.
             //Debug.Log("collide?");
+            AkSoundEngine.PostEvent("SFX_player_takeDamage", gameObject);  // Play player damage SFX
             other.GetComponent<HealthPoint>().GiveDamage(damage);
             Destroy(gameObject);
         }

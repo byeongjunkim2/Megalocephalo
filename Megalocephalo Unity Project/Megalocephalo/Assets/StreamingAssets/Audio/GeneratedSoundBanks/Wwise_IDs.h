@@ -13,9 +13,11 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID SFX_ENEMY_TAKEDAMAGE = 1901650632U;
         static const AkUniqueID SFX_MENUCANCEL = 1288124910U;
         static const AkUniqueID SFX_MENUCONFIRM = 54691296U;
         static const AkUniqueID SFX_MENUSELECT = 76764264U;
+        static const AkUniqueID SFX_PLAYER_TAKEDAMAGE = 1358160235U;
         static const AkUniqueID SFX_PLAYERCHARGE = 2870271946U;
         static const AkUniqueID SFX_PLAYERCHARGEEND = 1847534809U;
         static const AkUniqueID SFX_PLAYERSHOOT = 1882098847U;

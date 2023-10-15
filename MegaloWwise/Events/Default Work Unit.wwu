@@ -118,6 +118,21 @@
 										</Event>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="Health" ID="{FE036E14-B0C2-4173-AE54-2D0CAE864B6D}" ShortID="251528162">
+									<ChildrenList>
+										<Event Name="SFX_player_takeDamage" ID="{99A09EA8-1C7E-4714-97FC-5AED6EF33441}">
+											<ChildrenList>
+												<Action Name="" ID="{23533DF5-BC02-4177-8B00-B9B1031DB361}" ShortID="769485462">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Take_Damage" ID="{40DB5B0B-9C2D-4EA6-80CB-7A716F68B77A}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Enemy" ID="{CB774D58-9761-47AA-B73F-6C978E83774C}" ShortID="1068192636">
@@ -125,6 +140,23 @@
 								<Property Name="Color" Type="int16" Value="10"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<ChildrenList>
+								<Folder Name="Health" ID="{047F99D1-1407-40BE-9FF5-070359DEB2FA}" ShortID="164072752">
+									<ChildrenList>
+										<Event Name="SFX_enemy_takeDamage" ID="{ABDEFCCF-8122-4BF6-B275-A4A84A2EE150}">
+											<ChildrenList>
+												<Action Name="" ID="{57FCAA86-25B8-44D9-B31A-B0489D839160}" ShortID="981667047">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="TakeDamage" ID="{70CDFCD8-5ED3-4D3B-910F-A510E08BE1D0}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
 						</Folder>
 						<Folder Name="UI" ID="{325C0161-EF9B-45D3-9E96-C426BE575CF8}" ShortID="741493413">
 							<PropertyList>
@@ -137,7 +169,7 @@
 										<Action Name="" ID="{3DEE98C3-DDAB-4E30-BD06-DB346509420C}" ShortID="671190355">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sfx_UI_menu_confirm" ID="{564A8C9B-648F-40E4-9F0E-BA29CDDAA233}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+													<ObjectRef Name="Confirm" ID="{564A8C9B-648F-40E4-9F0E-BA29CDDAA233}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -148,7 +180,7 @@
 										<Action Name="" ID="{9DEF6209-268B-439F-B788-6D5F52275CBE}" ShortID="506523858">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sfx_UI_menu_cancel" ID="{A7F3348D-5BF6-4EAA-8829-BA9C362E9E07}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+													<ObjectRef Name="Cancel" ID="{A7F3348D-5BF6-4EAA-8829-BA9C362E9E07}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -159,7 +191,7 @@
 										<Action Name="" ID="{4B2F6DD2-3B7D-4823-9D63-F0C2ECE35FBD}" ShortID="793927584">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sfx_UI_menu_select01" ID="{CD0DAB0E-7961-4321-94DF-9C47E70D0C73}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
+													<ObjectRef Name="Select_01" ID="{CD0DAB0E-7961-4321-94DF-9C47E70D0C73}" WorkUnitID="{9716882F-AFCE-4F0F-8717-110D0395AB37}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

@@ -70,7 +70,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{3F0D88ED-77C8-59CA-9504-EA26CD43E950}">
+		<SoundBank Id="2880737896" Type="User" Language="SFX" Hash="{C147A36E-1E46-BC9D-0E90-42A46F469065}">
 			<ShortName>MainBank</ShortName>
 			<Path>MainBank.bnk</Path>
 			<Media>
@@ -102,6 +102,10 @@
 					<ShortName>sfx_player_rangedWeapon_bubble_03.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_bubble_03_10C4C929.wem</CachePath>
 				</File>
+				<File Id="228475610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_player_takeDamage_03.wav</ShortName>
+					<CachePath>SFX/sfx_player_takeDamage_03_10C4C929.wem</CachePath>
+				</File>
 				<File Id="257601877" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_laser_02.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_laser_02_10C4C929.wem</CachePath>
@@ -109,6 +113,10 @@
 				<File Id="312519200" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_laser_03.wav</ShortName>
 					<CachePath>SFX/sfx_player_rangedWeapon_laser_03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="410768857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_player_takeDamage_01.wav</ShortName>
+					<CachePath>SFX/sfx_player_takeDamage_01_10C4C929.wem</CachePath>
 				</File>
 				<File Id="461077377" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_player_rangedWeapon_laser_01.wav</ShortName>
@@ -134,8 +142,19 @@
 					<ShortName>sfx_UI_menu_select01.wav</ShortName>
 					<CachePath>SFX/sfx_UI_menu_select01_10C4C929.wem</CachePath>
 				</File>
+				<File Id="804337693" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_player_takeDamage_02.wav</ShortName>
+					<CachePath>SFX/sfx_player_takeDamage_02_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="1901650632" Name="SFX_enemy_takeDamage" DurationType="OneShot" DurationMin="0.62908334" DurationMax="0.6933333">
+					<MediaRefs>
+						<MediaRef Id="228475610"/>
+						<MediaRef Id="410768857"/>
+						<MediaRef Id="804337693"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1288124910" Name="SFX_menuCancel" DurationType="OneShot" DurationMin="0.4915" DurationMax="0.4915">
 					<MediaRefs>
 						<MediaRef Id="495839321"/>
@@ -149,6 +168,13 @@
 				<Event Id="76764264" Name="SFX_menuSelect" DurationType="OneShot" DurationMin="0.43752083" DurationMax="0.43752083">
 					<MediaRefs>
 						<MediaRef Id="776192565"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1358160235" Name="SFX_player_takeDamage" DurationType="OneShot" DurationMin="0.6236563" DurationMax="0.69936675">
+					<MediaRefs>
+						<MediaRef Id="228475610"/>
+						<MediaRef Id="410768857"/>
+						<MediaRef Id="804337693"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2870271946" Name="SFX_playerCharge" DurationType="Infinite">
@@ -203,5 +229,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{542A8A9E-B2C2-6519-91EB-2C1A7BB80B2E}</FileHash>
+	<FileHash>{88534127-1986-A179-7642-FF1C7D62EC95}</FileHash>
 </SoundBanksInfo>

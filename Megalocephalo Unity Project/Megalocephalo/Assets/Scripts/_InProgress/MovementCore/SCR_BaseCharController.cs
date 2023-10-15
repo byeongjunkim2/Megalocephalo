@@ -4,11 +4,11 @@ using UnityEngine;
 using KinematicCharacterController;
 using System;
 
-namespace KinematicCharacterController.Examples
+namespace KinematicCharacterController
 {
     public enum CharacterState
     {
-        Default, //Jump, Swing, ......
+        Default, //Jump, Swing, .
     }
 
     public enum OrientationMethod
@@ -24,6 +24,7 @@ namespace KinematicCharacterController.Examples
         public float MoveAxisRight;
         public Quaternion CameraRotation;
         public bool JumpDown;
+        public bool JumpUp;
         public bool CrouchDown;
         public bool CrouchUp;
     }
@@ -41,7 +42,7 @@ namespace KinematicCharacterController.Examples
         TowardsGroundSlopeAndGravity,
     }
 
-    public class ExampleCharacterController : MonoBehaviour, ICharacterController
+    public class SCR_BaseCharController : MonoBehaviour, ICharacterController
     {
         public KinematicCharacterMotor Motor;
 
@@ -79,6 +80,7 @@ namespace KinematicCharacterController.Examples
         private Vector3 _moveInputVector;
         private Vector3 _lookInputVector;
         private bool _jumpRequested = false;
+        private bool _jumpStopRequested = false;
         private bool _jumpConsumed = false;
         private bool _jumpedThisFrame = false;
         private float _timeSinceJumpRequested = Mathf.Infinity;
@@ -194,6 +196,13 @@ namespace KinematicCharacterController.Examples
                         {
                             _timeSinceJumpRequested = 0f;
                             _jumpRequested = true;
+                        }
+                        if (inputs.JumpUp)
+                        {
+                            if (_jumpConsumed)
+                            {
+                                _jumpStopRequested = true;
+                            }
                         }
 
 
@@ -369,6 +378,11 @@ namespace KinematicCharacterController.Examples
                                 _jumpConsumed = true;
                                 _jumpedThisFrame = true;
                             }
+                        }
+                        if (_jumpStopRequested && _jumpConsumed && currentVelocity.y >= 0f)
+                        {
+                            currentVelocity.y = 0;
+                            _jumpStopRequested = false;
                         }
 
                         // Take into account additive velocity

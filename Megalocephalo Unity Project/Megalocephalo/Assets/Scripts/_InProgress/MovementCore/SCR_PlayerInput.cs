@@ -4,11 +4,11 @@ using UnityEngine;
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
 
-namespace KinematicCharacterController.Examples
+namespace KinematicCharacterController
 {
-    public class ExamplePlayer : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
-        public ExampleCharacterController Character;
+        public SCR_BaseCharController Character;
         public GameObject CharacterCamera;
 
         //private const string MouseXInput = "Mouse X";
@@ -89,7 +89,7 @@ namespace KinematicCharacterController.Examples
             characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
             characterInputs.CameraRotation = CharacterCamera.transform.rotation;
             characterInputs.JumpDown = Input.GetKeyDown(KeyCode.Space);
-            //characterInputs.JumpStop = Input.GetKeyUp(KeyCode.Space);
+            characterInputs.JumpUp = Input.GetKeyUp(KeyCode.Space);
             characterInputs.CrouchDown = Input.GetKeyDown(KeyCode.LeftShift);
             characterInputs.CrouchUp = Input.GetKeyUp(KeyCode.LeftShift);
 

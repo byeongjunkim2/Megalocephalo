@@ -70,7 +70,7 @@ public class CamRotate : MonoBehaviour
 
         while (rotatedAmount < targetRotation)
         {
-            float rotationThisFrame = rotationSpeed * Time.unscaledDeltaTime; // 일시정지 상태에서도 정상적으로 작동하기 위해 Time.unscaledDeltaTime을 사용합니다.
+            float rotationThisFrame = rotationSpeed * Time.unscaledDeltaTime; // Time.unscaledDeltaTime
             rotatedAmount += rotationThisFrame;
             transform.Rotate(Vector3.up, rotationThisFrame);
 

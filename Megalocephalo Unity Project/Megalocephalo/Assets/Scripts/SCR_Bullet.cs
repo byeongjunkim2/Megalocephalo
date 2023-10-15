@@ -8,11 +8,11 @@ public class Bullet : MonoBehaviour
     
     public int damage;
     public GameObject shooter;
-     TrailRenderer trailRenderer;
-    public enum BulletType { bullet,tempTentacle }   //change it later 
+    TrailRenderer trailRenderer;
+    public enum BulletType { bullet,tempTentacle,spike }   //change it later 
     public BulletType type;
 
-    public void SetBullet(GameObject shooterObj, BulletType bulletType)
+    virtual public void SetBullet(GameObject shooterObj, BulletType bulletType)
     {
         shooter = shooterObj;
         type = bulletType;

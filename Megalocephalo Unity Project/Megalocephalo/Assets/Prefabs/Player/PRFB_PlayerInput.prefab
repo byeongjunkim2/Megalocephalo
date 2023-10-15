@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5794066330318935901}
   m_Layer: 0
   m_Name: PRFB_PlayerInput
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5794066330318935901
 MonoBehaviour:
@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 0}
   CharacterCamera: {fileID: 0}
+  bullet: {fileID: 4383649146452863312, guid: 07c49a8927158c54ab5735f8597111e7, type: 3}

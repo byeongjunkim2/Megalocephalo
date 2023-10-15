@@ -27,6 +27,8 @@ namespace KinematicCharacterController
         public bool JumpUp;
         public bool CrouchDown;
         public bool CrouchUp;
+
+        public bool AttackDown;
     }
 
     public struct AICharacterInputs
@@ -79,6 +81,7 @@ namespace KinematicCharacterController
         private RaycastHit[] _probedHits = new RaycastHit[8];
         private Vector3 _moveInputVector;
         private Vector3 _lookInputVector;
+        private Vector3 _charactorHorizontalVector;
         private bool _jumpRequested = false;
         private bool _jumpStopRequested = false;
         private bool _jumpConsumed = false;
@@ -161,11 +164,13 @@ namespace KinematicCharacterController
             {
                 //_lookInputVector = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.left, Motor.CharacterUp).normalized;
                 _lookInputVector = Vector3.ProjectOnPlane(inputs.CameraRotation * new Vector3(-1f,0,-0.5f), Motor.CharacterUp).normalized;
+                _charactorHorizontalVector = Vector3.ProjectOnPlane(inputs.CameraRotation * Vector3.left, Motor.CharacterUp).normalized;
             }
             else if(inputs.MoveAxisRight > 0f) 
             {
                 //_lookInputVector = Vector3.ProjectOnPlane(inputs.CameraRotation * -Vector3.left, Motor.CharacterUp).normalized;
                 _lookInputVector = Vector3.ProjectOnPlane(inputs.CameraRotation * new Vector3(1f, 0, -0.5f), Motor.CharacterUp).normalized;
+                _charactorHorizontalVector = Vector3.ProjectOnPlane(inputs.CameraRotation * -Vector3.left, Motor.CharacterUp).normalized;
             }
             else
             {
@@ -520,5 +525,10 @@ namespace KinematicCharacterController
         public void OnDiscreteCollisionDetected(Collider hitCollider)
         {
         }
+        public Vector3 GetFacingDirection()
+        {
+            return _charactorHorizontalVector;
+        }
+
     }
 }

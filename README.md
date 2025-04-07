@@ -1,0 +1,2 @@
+Megalocephalo is a 3D platformer game developed with Unity. The project was originally created in SVN and then mirrored to Git, though contributor names were not transferred correctly in the process.
+It will be updated soon
